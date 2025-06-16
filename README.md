@@ -6,25 +6,26 @@
   <tr>
     <th>Back-End</th>
     <td>
-      Java, Spring, SpringBoot, SpringSecurity, JSP/Servlet, MyBatis, JPA:Hibernate, Python, Django, AmazonEC2
+      Node.js, Express.js, REST API, Prisma ORM, JWT, Bcrypt, Cloudinary
     </td>
   </tr>
   <tr>
     <th>DB</th>
     <td>
-      Oracle, MySQL, MariaDB
+      PostgreSQL, MongoDB, FireBase, MySql
     </td>
   </tr>
   <tr>
     <th>Front-End</th>
     <td>
-      React, JavaScript, JQuery, Ajax, HTML/CSS
+      React, Next.js, JavaScript, TypeScript, Tailwind CSS, React Query
     </td>
   </tr>
   <tr>
     <th>Tools</th>
     <td>
-      Git, GitHub, SVN, DBeaver, IntelliJ, VSCode, STS, Eclipse, Android Studio, Slack, Notion
+      Git, GitHub, Vercel, VSCode, Figma, Postman, Notion
     </td>
   </tr>
 </table>
+
