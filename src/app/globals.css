@@ -1,0 +1,314 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* === Break Point === */
+  --breakpoint-md: 765px;
+  --breakpoint-lg: 1200px;
+
+  /* === Base Colors === */
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* === Black === */
+  --color-black-100: #282828;
+
+  /* === Background === */
+  --color-bg-100: #f7f6f2;
+  --color-bg-200: #e7e5ddb2; /* modal */
+
+  /* === Primary === */
+  --color-primary-beige-100: #a59266;
+
+  /* === Hover === */
+  --color-hover-100: #f3f4f6;
+}
+
+/* 10px */
+@utility text-10-bold {
+  font-size: 0.625rem; /* 10px */
+  line-height: 1rem; /* 16px */
+  font-weight: 700;
+}
+@utility text-10-semibold {
+  font-size: 0.625rem;
+  line-height: 1rem;
+  font-weight: 600;
+}
+@utility text-10-medium {
+  font-size: 0.625rem;
+  line-height: 0.875rem; /* 14px */
+  font-weight: 500;
+}
+@utility text-10-regular {
+  font-size: 0.625rem;
+  line-height: 0.875rem;
+  font-weight: 400;
+}
+
+/* 12px */
+@utility text-12-bold {
+  font-size: 0.75rem; /* 12px */
+  line-height: 1.25rem; /* 20px */
+  font-weight: 700;
+}
+@utility text-12-semibold {
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+}
+@utility text-12-medium {
+  font-size: 0.75rem;
+  line-height: 1.125rem; /* 18px */
+  font-weight: 500;
+}
+@utility text-12-regular {
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}
+
+/* 14px */
+@utility text-14-bold {
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.25rem; /* 20px */
+  font-weight: 700;
+}
+@utility text-14-semibold {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  font-weight: 600;
+}
+@utility text-14-medium {
+  font-size: 0.875rem;
+  line-height: 1.125rem; /* 18px */
+  font-weight: 500;
+}
+@utility text-14-regular {
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}
+
+/* 16px */
+@utility text-16-bold {
+  font-size: 1rem; /* 16px */
+  line-height: 1.5rem; /* 24px */
+  font-weight: 700;
+}
+@utility text-16-semibold {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+}
+@utility text-16-medium {
+  font-size: 1rem;
+  line-height: 1.375rem; /* 22px */
+  font-weight: 500;
+}
+@utility text-16-regular {
+  font-size: 1rem;
+  line-height: 1.375rem;
+  font-weight: 400;
+}
+
+/* 18px */
+@utility text-18-bold {
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.75rem; /* 28px */
+  font-weight: 700;
+}
+@utility text-18-semibold {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+}
+@utility text-18-medium {
+  font-size: 1.125rem;
+  line-height: 1.5rem; /* 24px */
+  font-weight: 500;
+}
+@utility text-18-regular {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+}
+
+/* 20px */
+@utility text-20-bold {
+  font-size: 1.25rem; /* 20px */
+  line-height: 1.75rem; /* 28px */
+  font-weight: 700;
+}
+@utility text-20-semibold {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+}
+@utility text-20-medium {
+  font-size: 1.25rem;
+  line-height: 1.5rem; /* 24px */
+  font-weight: 500;
+}
+@utility text-20-regular {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+}
+
+/* 22px */
+@utility text-22-bold {
+  font-size: 1.375rem; /* 22px */
+  line-height: 1.875rem; /* 30px */
+  font-weight: 700;
+}
+@utility text-22-semibold {
+  font-size: 1.375rem;
+  line-height: 1.875rem;
+  font-weight: 600;
+}
+@utility text-22-medium {
+  font-size: 1.375rem;
+  line-height: 1.625rem; /* 26px */
+  font-weight: 500;
+}
+@utility text-22-regular {
+  font-size: 1.375rem;
+  line-height: 1.625rem;
+  font-weight: 400;
+}
+
+/* 24px */
+@utility text-24-bold {
+  font-size: 1.5rem; /* 24px */
+  line-height: 2rem; /* 32px */
+  font-weight: 700;
+}
+@utility text-24-semibold {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+}
+@utility text-24-medium {
+  font-size: 1.5rem;
+  line-height: 1.75rem; /* 28px */
+  font-weight: 500;
+}
+@utility text-24-regular {
+  font-size: 1.5rem;
+  line-height: 1.75rem;
+  font-weight: 400;
+}
+
+/* 26px */
+@utility text-26-bold {
+  font-size: 1.625rem; /* 26px */
+  line-height: 2.125rem; /* 34px */
+  font-weight: 700;
+}
+@utility text-26-semibold {
+  font-size: 1.625rem;
+  line-height: 2.125rem; /* 34px */
+  font-weight: 600;
+}
+@utility text-26-medium {
+  font-size: 1.625rem;
+  line-height: 1.875rem; /* 30px */
+  font-weight: 500;
+}
+@utility text-26-regular {
+  font-size: 1.625rem;
+  line-height: 1.875rem; /* 30px */
+  font-weight: 400;
+}
+
+/* 28px */
+@utility text-28-bold {
+  font-size: 1.75rem; /* 28px */
+  line-height: 2.25rem; /* 36px */
+  font-weight: 700;
+}
+@utility text-28-semibold {
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+  font-weight: 600;
+}
+@utility text-28-medium {
+  font-size: 1.75rem;
+  line-height: 2rem; /* 32px */
+  font-weight: 500;
+}
+@utility text-28-regular {
+  font-size: 1.75rem;
+  line-height: 2rem;
+  font-weight: 400;
+}
+
+/* 30px */
+@utility text-30-bold {
+  font-size: 1.875rem; /* 30px */
+  line-height: 2.375rem; /* 38px */
+  font-weight: 700;
+}
+@utility text-30-semibold {
+  font-size: 1.875rem;
+  line-height: 2.375rem;
+  font-weight: 600;
+}
+@utility text-30-medium {
+  font-size: 1.875rem;
+  line-height: 2.125rem; /* 34px */
+  font-weight: 500;
+}
+@utility text-30-regular {
+  font-size: 1.875rem;
+  line-height: 2.125rem;
+  font-weight: 400;
+}
+
+/* 32px */
+@utility text-32-bold {
+  font-size: 2rem; /* 32px */
+  line-height: 2.5rem; /* 40px */
+  font-weight: 700;
+}
+@utility text-32-semibold {
+  font-size: 2rem;
+  line-height: 2.5rem;
+  font-weight: 600;
+}
+@utility text-32-medium {
+  font-size: 2rem;
+  line-height: 2.25rem; /* 36px */
+  font-weight: 500;
+}
+@utility text-32-regular {
+  font-size: 2rem;
+  line-height: 2.25rem;
+  font-weight: 400;
+}
+
+html,
+body {
+  background-color: var(--color-bg-100);
+  color: var(--color-black-100);
+}
+
+button,
+a {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+}
+
+input,
+textarea {
+  outline: none;
+  resize: none;
+}
+
+/* shadow */
+.shadow-header {
+  box-shadow: 0px 0px 15px 20px var(--color-bg-100);
+}
