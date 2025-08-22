@@ -3,7 +3,7 @@
 @theme inline {
   /* === Break Point === */
   --breakpoint-md: 765px;
-  --breakpoint-lg: 1200px;
+  --breakpoint-lg: 1240px;
 
   /* === Base Colors === */
   --color-white: #ffffff;
