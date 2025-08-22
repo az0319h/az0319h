@@ -17,7 +17,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "HongSunghoon — Web Developer Portfolio",
+  title: "HongSunghoon - Web Developer Portfolio",
   description:
     "개인 포트폴리오 웹사이트로, 저를 소개하고 프로젝트와 경험을 한눈에 볼 수 있도록 제작했습니다. 자기소개, 경력 및 기술, 그리고 작업물들을 정리하여 방문자가 제 역량을 쉽게 이해할 수 있도록 구성했습니다.",
   icons: {
