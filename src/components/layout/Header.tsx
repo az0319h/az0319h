@@ -7,6 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import logo from "@/assets/images/logo.png";
 import subLogo from "@/assets/images/subLogo.png";
 import hamburgerMenu from "@/assets/images/hamburgerMenu.png";
+import AppLink from "@/components/common/AppLink";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,9 +27,18 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // 공통 클래스
+  const baseClasses = `
+    relative py-1 pr-6 
+    before:absolute before:bottom-0 before:content-[''] before:-z-10 
+    before:bg-primary-white-100 before:h-full before:right-5 before:w-0 
+    before:transition-all before:duration-300 
+    hover:before:w-[75%] hover:md:before:w-8/10
+  `;
+
   return (
     <header
-      className={`sticky z-40 top-0 left-0 bg-bg-100 transition-shadow ${
+      className={`sticky  z-40 top-0 left-0 bg-bg-100 transition-shadow ${
         isScrolled ? "shadow-header" : ""
       }`}
     >
@@ -48,7 +58,9 @@ export default function Header() {
           <button onClick={() => setIsOpen(true)}>
             <Image src={hamburgerMenu} width={24} alt="menu" />
           </button>
-          <button className="hidden md:block text-16-bold">G I T H U B</button>
+          <div className="hidden md:block">
+            <AppLink text="G I T H U B" href="https://github.com/az0319h" />
+          </div>
         </nav>
       </div>
 
@@ -57,9 +69,9 @@ export default function Header() {
           <motion.div
             key="overlay"
             className="fixed inset-0 z-50 bg-bg-200 flex flex-col items-center justify-center"
-            initial={{ y: "100%" }}
-            animate={{ y: 0 }}
-            exit={{ y: "100%" }}
+            initial={{ clipPath: "inset(50% 0 50% 0)" }} // 위/아래 50% → 닫힘
+            animate={{ clipPath: "inset(0 0 0 0)" }} // 전체 열림
+            exit={{ clipPath: "inset(50% 0 50% 0)" }} // 다시 위/아래로 닫힘
             transition={{ duration: 1, ease: "easeInOut" }}
           >
             <nav className="flex flex-col gap-3 md:gap-5 text-20-semibold md:text-24-semibold">
@@ -69,16 +81,32 @@ export default function Header() {
               >
                 X
               </button>
-              <Link href="/" onClick={() => setIsOpen(false)}>
+              <Link
+                href="/"
+                className={`${baseClasses}`}
+                onClick={() => setIsOpen(false)}
+              >
                 H O M E
               </Link>
-              <Link href="/about" onClick={() => setIsOpen(false)}>
+              <Link
+                href="/about"
+                className={`${baseClasses}`}
+                onClick={() => setIsOpen(false)}
+              >
                 A B O U T
               </Link>
-              <Link href="/project" onClick={() => setIsOpen(false)}>
+              <Link
+                href="/project"
+                className={`${baseClasses}`}
+                onClick={() => setIsOpen(false)}
+              >
                 P R O J E C T
               </Link>
-              <Link href="/contact" onClick={() => setIsOpen(false)}>
+              <Link
+                href="/contact"
+                className={`${baseClasses}`}
+                onClick={() => setIsOpen(false)}
+              >
                 C O N T A C T
               </Link>
             </nav>
