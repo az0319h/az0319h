@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import logo from "@/assets/images/logo.png";
-import subLogo from "@/assets/images/subLogo.png";
+import logo from "@/assets/images/logo.svg";
+import subLogo from "@/assets/images/subLogo.svg";
 import hamburgerMenu from "@/assets/images/hamburgerMenu.png";
 import AppLink from "@/components/common/AppLink";
 
