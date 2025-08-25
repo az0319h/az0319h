@@ -2,6 +2,7 @@
 
 @theme inline {
   /* === Break Point === */
+  --breakpoint-sm: 500px;
   --breakpoint-md: 765px;
   --breakpoint-lg: 1240px;
 
@@ -18,6 +19,7 @@
 
   /* === Primary === */
   --color-primary-blue-100: #bfdbfe;
+  --color-primary-blue-200: #3b82f6;
   --color-primary-white-100: #fffafa;
 
   /* === Hover === */
@@ -46,6 +48,12 @@
   font-weight: 400;
 }
 
+@utility text-10-light {
+  font-size: 0.625rem;
+  line-height: 0.875rem;
+  font-weight: 300;
+}
+
 /* 12px */
 @utility text-12-bold {
   font-size: 0.75rem; /* 12px */
@@ -66,6 +74,11 @@
   font-size: 0.75rem;
   line-height: 1.125rem;
   font-weight: 400;
+}
+@utility text-12-light {
+  font-size: 0.75rem; /* 12px */
+  line-height: 1.125rem; /* 18px */
+  font-weight: 300;
 }
 
 /* 14px */
@@ -88,6 +101,12 @@
   font-size: 0.875rem;
   line-height: 1.125rem;
   font-weight: 400;
+}
+/* 14px */
+@utility text-14-light {
+  font-size: 0.875rem; /* 14px */
+  line-height: 1.125rem; /* 18px */
+  font-weight: 300;
 }
 
 /* 16px */
@@ -112,6 +131,12 @@
   font-weight: 400;
 }
 
+@utility text-16-light {
+  font-size: 1rem; /* 16px */
+  line-height: 1.375rem; /* 22px */
+  font-weight: 300;
+}
+
 /* 18px */
 @utility text-18-bold {
   font-size: 1.125rem; /* 18px */
@@ -132,6 +157,12 @@
   font-size: 1.125rem;
   line-height: 1.5rem;
   font-weight: 400;
+}
+
+@utility text-18-light {
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.5rem; /* 24px */
+  font-weight: 300;
 }
 
 /* 20px */
@@ -198,6 +229,12 @@
   font-size: 1.5rem;
   line-height: 1.75rem;
   font-weight: 400;
+}
+
+@utility text-24-light {
+  font-size: 1.5rem; /* 24px */
+  line-height: 1.75rem; /* 28px */
+  font-weight: 300;
 }
 
 /* 26px */

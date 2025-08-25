@@ -56,7 +56,12 @@ export default function Header() {
 
         <nav className="flex items-center gap-8">
           <button onClick={() => setIsOpen(true)}>
-            <Image src={hamburgerMenu} width={24} alt="menu" />
+            <Image
+              src={hamburgerMenu}
+              width={20}
+              className="md:size-6"
+              alt="menu"
+            />
           </button>
           <div className="hidden md:block">
             <AppLink text="G I T H U B" href="https://github.com/az0319h" />
