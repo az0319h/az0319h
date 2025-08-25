@@ -22,8 +22,11 @@
   --color-primary-blue-200: #3b82f6;
   --color-primary-white-100: #fffafa;
 
+  /* === line === */
+  --color-line-100: #8d8c8c;
+
   /* === Hover === */
-  --color-hover-100: #f3f4f6;
+  --color-hover-100: #222222;
 }
 
 /* 10px */

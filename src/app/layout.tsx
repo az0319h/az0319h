@@ -18,7 +18,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "HongSunghoon - Web Developer Portfolio",
+  title: "Hong Sunghoon - Web Developer Portfolio",
   description:
     "개인 포트폴리오 웹사이트로, 저를 소개하고 프로젝트와 경험을 한눈에 볼 수 있도록 제작했습니다. 자기소개, 경력 및 기술, 그리고 작업물들을 정리하여 방문자가 제 역량을 쉽게 이해할 수 있도록 구성했습니다.",
   icons: {
@@ -36,7 +36,7 @@ export default function RootLayout({
       <body className={`${poppins.className} flex flex-col min-h-screen  px-5`}>
         <UserProvider>
           <Header />
-          <div className="flex-1  w-full pt-5 md:pt-10 lg:pt-14 max-w-screen-lg mx-auto">
+          <div className="flex-1  w-full py-5 md:py-10 lg:py-14 max-w-screen-lg mx-auto">
             {children}
           </div>
           <Footer />
