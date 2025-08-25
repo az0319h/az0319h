@@ -5,10 +5,11 @@ import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { UserProvider } from "@/context/UserContext";
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 const spaceGrotesk = Space_Grotesk({
@@ -33,9 +34,13 @@ export default function RootLayout({
   return (
     <html>
       <body className={`${poppins.className} flex flex-col min-h-screen  px-5`}>
-        <Header />
-        <div className="flex-1 w-full max-w-screen-lg mx-auto">{children}</div>
-        <Footer />
+        <UserProvider>
+          <Header />
+          <div className="flex-1 w-full max-w-screen-lg mx-auto">
+            {children}
+          </div>
+          <Footer />
+        </UserProvider>
       </body>
     </html>
   );
