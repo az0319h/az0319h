@@ -44,14 +44,14 @@ export default function Header() {
     >
       <div className="py-5 md:py-6 flex items-center justify-between">
         <Link href={"/"} className="flex items-center gap-1 w-fit">
-          <Image src={logo} width={35} height={35} alt="logo" />
+          <Image src={logo} width={35} height={35} alt="logo" priority />
           <h2>
             MadeBy<span className="font-bold">Hong</span>
           </h2>
         </Link>
 
         <div className="hidden md:block">
-          <Image src={subLogo} width={100} alt="subLogo" />
+          <Image src={subLogo} width={100} alt="subLogo" priority />
         </div>
 
         <nav className="flex items-center gap-8">
