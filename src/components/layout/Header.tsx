@@ -38,7 +38,7 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky  z-40 top-0 left-0 bg-bg-100 transition-shadow ${
+      className={`sticky -mx-5 px-5 z z-40 top-0 left-0 bg-bg-100 transition-shadow ${
         isScrolled ? "shadow-header" : ""
       }`}
     >
@@ -101,7 +101,7 @@ export default function Header() {
                 A B O U T
               </Link>
               <Link
-                href="/project"
+                href="/projects"
                 className={`${baseClasses}`}
                 onClick={() => setIsOpen(false)}
               >

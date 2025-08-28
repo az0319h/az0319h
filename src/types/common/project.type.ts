@@ -23,5 +23,5 @@ export interface ProjectPayload {
   overallScore: number;
   category: string;
   tags: string[];
-  participants: Record<string, Participant>;
+  participants: Record<string, Participant> | Participant[];
 }
