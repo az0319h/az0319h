@@ -70,9 +70,15 @@ export async function createContact(formData: {
   `,
     });
 
-    return { success: true };
+    return {
+      success: true,
+      message: "Your message has been sent successfully!",
+    };
   } catch (error) {
-    console.error("Email Send Failed!", error);
-    return { success: false };
+    console.log("Email Send Failed!", error);
+    return {
+      success: false,
+      message: "An error occurred while sending your message.",
+    };
   }
 }

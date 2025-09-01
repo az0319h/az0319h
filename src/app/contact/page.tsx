@@ -23,10 +23,10 @@ export default function ContactPage() {
   const onSubmit = async (data: ContactFormData) => {
     const result = await createContact(data);
     if (result.success) {
-      showNotification("Your message has been sent successfully.", true);
+      showNotification(result.message, true);
       reset();
     } else {
-      showNotification("An error occurred while sending your message.", false);
+      showNotification(result.message, false);
     }
   };
 
