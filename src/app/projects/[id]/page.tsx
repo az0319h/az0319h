@@ -36,6 +36,7 @@ export default async function ProjectDetailPage({
               width={160}
               height={0}
               unoptimized
+              priority
               className="transform -translate-x-5 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"
             />
             <span className="absolute left-1/2 top-1/2 -translate-1/2 text-white text-14-medium  opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -56,6 +57,7 @@ export default async function ProjectDetailPage({
               width={160}
               height={0}
               unoptimized
+              priority
               className="transform translate-x-5 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"
             />
             <span className="absolute left-1/2 top-1/2 -translate-1/2 text-white text-14-medium  opacity-0 group-hover:opacity-100 transition-opacity duration-300">

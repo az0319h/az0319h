@@ -29,16 +29,16 @@ export default function Header() {
 
   // 공통 클래스
   const baseClasses = `
-    relative py-1 pr-6 
+    relative py-1 pr-6 w-fit
     before:absolute before:bottom-0 before:content-[''] before:-z-10 
-    before:bg-primary-white-100 before:h-full before:right-5 before:w-0 
+    before:bg-primary-white-100 before:h-full before:right-0 before:w-0
     before:transition-all before:duration-300 
-    hover:before:w-[75%] hover:md:before:w-8/10
+    hover:before:w-[75%] hover:md:before:w-[85%]
   `;
 
   return (
     <header
-      className={`sticky -mx-5 px-5 z z-40 top-0 left-0 bg-bg-100 transition-shadow ${
+      className={`sticky -mx-5 px-5  z-40 top-0 left-0 bg-bg-100 transition-shadow ${
         isScrolled ? "shadow-header" : ""
       }`}
     >
