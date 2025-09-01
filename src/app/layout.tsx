@@ -6,6 +6,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { UserProvider } from "@/context/UserContext";
+import { NotificationProvider } from "@/context/NotificationContext";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -34,13 +35,16 @@ export default function RootLayout({
   return (
     <html>
       <body className={`${poppins.className} flex flex-col min-h-screen  px-5`}>
-        <UserProvider>
-          <Header />
-          <div className="flex-1  w-full py-5 md:py-10 lg:py-14 max-w-screen-lg mx-auto">
-            {children}
-          </div>
-          <Footer />
-        </UserProvider>
+        <NotificationProvider>
+          <UserProvider>
+            <Header />
+            <div className="flex-1  w-full py-5 md:py-10 lg:py-14 max-w-screen-lg mx-auto">
+              {children}
+            </div>
+
+            <Footer />
+          </UserProvider>
+        </NotificationProvider>
       </body>
     </html>
   );
