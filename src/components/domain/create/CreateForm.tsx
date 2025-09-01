@@ -1,6 +1,6 @@
 "use client";
 
-import { createProject } from "@/api/create-project.action";
+import { createProject } from "@/api/createProject.action";
 import { useUser } from "@/context/UserContext";
 import { Participant } from "@/types";
 import { useActionState, useEffect, useState } from "react";

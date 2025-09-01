@@ -1,10 +1,10 @@
-import { readAllProjects } from "@/api/read-projects.action";
+import { readAllProjects } from "@/api/readAllProjects.action";
 import AppLink from "@/components/common/AppLink";
 import ProjectCard from "@/components/common/ProjectCard";
 import HeroBanner from "@/components/domain/home/HeroBanner";
 import Image from "next/image";
 import blog from "@/assets/images/blog.png";
-import { readDeployProjectUrl } from "@/api/raed-deployProjectUrl.action";
+import { readDeployProjectUrl } from "@/api/raedDeployProjectUrl.action";
 
 export default async function HomePage() {
   const [datas, deployUrl] = await Promise.all([

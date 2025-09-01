@@ -1,4 +1,5 @@
-import { readProjectById } from "@/api/read-project.action";
+import { readAdjacentProjects } from "@/api/readAdjacentProjects.action";
+import { readProjectById } from "@/api/readProject.action";
 import Shortcut from "@/components/domain/projects/Shortcut";
 import Image from "next/image";
 import Link from "next/link";
@@ -18,10 +19,51 @@ export default async function ProjectDetailPage({
 }) {
   const { id } = await params;
   const data = await readProjectById(id);
-  console.log(data);
+  const adjacent = await readAdjacentProjects(id);
+
   if (!data) notFound();
   return (
     <div>
+      <div className="hidden w-40 lg:block lg:fixed top-1/2 left-0 z-30 -translate-y-1/2">
+        {adjacent.prev && (
+          <Link
+            href={`/projects/${adjacent.prev.id}`}
+            className="group block relative overflow-hidden"
+          >
+            <Image
+              src={adjacent.prev.projectImageUrl}
+              alt="projectImage"
+              width={160}
+              height={0}
+              unoptimized
+              className="transform -translate-x-5 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"
+            />
+            <span className="absolute left-1/2 top-1/2 -translate-1/2 text-white text-14-medium  opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              P R E V
+            </span>
+          </Link>
+        )}
+      </div>
+      <div className="hidden w-40 lg:block lg:fixed top-1/2 -translate-y-1/2 right-0  z-30">
+        {adjacent.next && (
+          <Link
+            href={`/projects/${adjacent.next.id}`}
+            className="group block relative overflow-hidden"
+          >
+            <Image
+              src={adjacent.next.projectImageUrl}
+              alt="projectImage"
+              width={160}
+              height={0}
+              unoptimized
+              className="transform translate-x-5 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"
+            />
+            <span className="absolute left-1/2 top-1/2 -translate-1/2 text-white text-14-medium  opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+              N E X T
+            </span>
+          </Link>
+        )}
+      </div>
       <div className="max-w-185 mx-auto">
         <div className="flex  items-center justify-center  flex-col md:flex-row md:justify-between  md:items-center  mb-7">
           <div className="text-center md:text-left">
