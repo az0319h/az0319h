@@ -30,7 +30,7 @@ export async function createContact(formData: {
     await transporter.sendMail({
       from: `"${formData.name}" <${formData.email}>`,
       replyTo: formData.email,
-      to: process.env.NEXT_PUBLIC_EMAIL_USER,
+      to: process.env.EMAIL_USER,
       subject: `[문의] ${readableType}`,
       text: `
     성함/회사: ${formData.name}
@@ -70,9 +70,15 @@ export async function createContact(formData: {
   `,
     });
 
-    return { success: true };
+    return {
+      success: true,
+      message: "Your message has been sent successfully!",
+    };
   } catch (error) {
-    console.error("Email Send Failed!", error);
-    return { success: false };
+    console.log("Email Send Failed!", error);
+    return {
+      success: false,
+      message: "An error occurred while sending your message.",
+    };
   }
 }
