@@ -2,6 +2,7 @@ export interface Participant {
   id: string;
   name: string;
   role: string;
+  position: string;
   githubUrl?: string;
   imageUrl?: string;
   createdAt: string;
@@ -12,7 +13,7 @@ export interface ProjectPayload {
   createdAt: string;
   title: string;
   tagline: string;
-  location: string;
+  platform: string;
   description: string;
   projectUrl: string;
   projectImageUrl: string;

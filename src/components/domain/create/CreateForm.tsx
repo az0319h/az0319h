@@ -2,16 +2,8 @@
 
 import { createProject } from "@/api/create-project.action";
 import { useUser } from "@/context/UserContext";
+import { Participant } from "@/types";
 import { useActionState, useEffect, useState } from "react";
-
-type ParticipantUI = {
-  id: string;
-  name: string;
-  role: string;
-  githubUrl?: string;
-  imageUrl?: string;
-  createdAt: string;
-};
 
 export default function CreateProjectForm() {
   const { user, logout } = useUser();
@@ -51,11 +43,12 @@ export default function CreateProjectForm() {
   const overall = Math.round((performance + accessibility + seo) / 3);
 
   // 참여자 상태
-  const [participants, setParticipants] = useState<ParticipantUI[]>([
+  const [participants, setParticipants] = useState<Participant[]>([
     {
       id: crypto.randomUUID(),
       name: "",
       role: "",
+      position: "",
       githubUrl: "",
       imageUrl: "",
       createdAt: new Date().toISOString(),
@@ -72,6 +65,7 @@ export default function CreateProjectForm() {
         id: crypto.randomUUID(),
         name: "",
         role: "",
+        position: "",
         githubUrl: "",
         imageUrl: "",
         createdAt: new Date().toISOString(),
@@ -85,7 +79,7 @@ export default function CreateProjectForm() {
 
   const updateParticipant = (
     id: string,
-    key: keyof ParticipantUI,
+    key: keyof Participant,
     value: string
   ) => {
     setParticipants((prev) =>
@@ -128,9 +122,9 @@ export default function CreateProjectForm() {
             </label>
 
             <label className="block">
-              <span>LOCATION</span>
+              <span>PLATFORM</span>
               <input
-                name="location"
+                name="platform"
                 type="text"
                 required
                 className="w-full border border-line-100 rounded px-3 py-2"
@@ -317,6 +311,18 @@ export default function CreateProjectForm() {
                       value={p.imageUrl}
                       onChange={(e) =>
                         updateParticipant(p.id, "imageUrl", e.target.value)
+                      }
+                      className="w-full border border-white rounded px-3 py-2"
+                    />
+                  </label>
+
+                  <label className="block">
+                    <span>POSITION</span>
+                    <input
+                      type="text"
+                      value={p.position}
+                      onChange={(e) =>
+                        updateParticipant(p.id, "position", e.target.value)
                       }
                       className="w-full border border-white rounded px-3 py-2"
                     />

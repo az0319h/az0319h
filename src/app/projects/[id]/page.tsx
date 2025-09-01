@@ -1,5 +1,15 @@
 import { readProjectById } from "@/api/read-project.action";
+import Shortcut from "@/components/domain/projects/Shortcut";
+import Image from "next/image";
+import Link from "next/link";
 import { notFound } from "next/navigation";
+import { MdInsights } from "react-icons/md";
+
+const positionOrder: Record<string, number> = {
+  "Team Leader": 0,
+  "Sub Leader": 1,
+  "Team Member": 2,
+};
 
 export default async function ProjectDetailPage({
   params,
@@ -8,6 +18,122 @@ export default async function ProjectDetailPage({
 }) {
   const { id } = await params;
   const data = await readProjectById(id);
+  console.log(data);
   if (!data) notFound();
-  return <div>{data.title}</div>;
+  return (
+    <div>
+      <div className="max-w-185 mx-auto">
+        <div className="flex  items-center justify-center  flex-col md:flex-row md:justify-between  md:items-center  mb-7">
+          <div className="text-center md:text-left">
+            <h2 className="text-22-bold md:text-24-bold mb-2">{data.title}</h2>
+            <h3 className="text-14-regular md:text-18-regular">
+              {data.tagline} | {data.platform}
+            </h3>
+          </div>
+          <div className="pt-6">
+            <Shortcut url={data.projectGitHubUrl} />
+          </div>
+        </div>
+        <div className="mb-7 md:mb-10">
+          <Link href={data.projectUrl} target="_blank">
+            <Image
+              src={data.projectImageUrl}
+              alt="projectImageUrl"
+              width={740}
+              height={0}
+              className="cursor-pointer shadow-image transition-all duration-300 ease-in-out hover:scale-101"
+              unoptimized
+            />
+          </Link>
+        </div>
+        <div className="flex flex-col gap-7 md:gap-10 px-7 mb-10 md:mb-15 md:flex-row">
+          <div>
+            <h4 className="text-center md:text-left ">
+              <span className="text-12-bold">ABOUT: </span>
+              <em className="text-12-regular">{data.description}</em>
+            </h4>
+          </div>
+          <div className="md:flex md:flex-col-reverse md:justify-between md:min-w-4/10">
+            <h4 className="text-center md:text-left">
+              <span className="text-12-bold">TECH STACK: </span>
+              {data.tags.map((tag, idx) => (
+                <em key={idx} className="text-12-regular">
+                  {tag}
+                  {idx < data.tags.length - 1 && ", "}&nbsp;
+                </em>
+              ))}
+            </h4>
+            <h4 className="text-center md:text-left">
+              <span className="text-12-bold">CATEGORY: </span>
+              <span className="text-12-regular">{data.category}</span>
+            </h4>
+          </div>
+        </div>
+        <div className="mb-10 md:mb-12">
+          <h5 className="text-center text-16-semibold mb-7">
+            L I G H T&nbsp;&nbsp;&nbsp;H O U S E&nbsp;&nbsp;&nbsp;P O I N T
+          </h5>
+          <ul className="flex  justify-center md:gap-12 gap-6 items-center md:[&_span]:text-14-semibold [&_span]:text-12-semibold [&_h4]:text-center  md:[&_h4]:text-14-regular [&_h4]:text-12-regular [&_li]:flex [&_li]:flex-col   [&_li]:items-center [&_li]:gap-0.5 md:[&_li]:gap-2">
+            <li className="">
+              <MdInsights size={40} className="md:size-12" />
+              <h4>P E R F O R M A N C E</h4>
+              <span>{data.performanceScore}/100</span>
+            </li>
+            <li className="">
+              <MdInsights size={40} className="md:size-12" />
+              <h4>S E O</h4>
+              <span>{data.seoScore}/100</span>
+            </li>
+            <li>
+              <MdInsights size={40} className="md:size-12" />
+              <h4>A C C E S S I B I L I T Y</h4>
+              <span>{data.accessibilityScore}/100</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div className="bg-bg-400 -mx-5 -mb-5 md:-mb-10 lg:-mb-14 lg:mx-[calc((100vw-1260px)/-2)]">
+        <div className="max-w-310 mx-auto py-10 px-5 ">
+          <h4 className="text-18-semibold md:text-20-semibold text-center mb-8 md:mb-10 ">
+            C O L L A B O R A T O R S
+          </h4>
+          <ul className="grid grid-cols-1 gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3 ">
+            {Object.values(data.participants)
+              .sort((a, b) => {
+                const ai = positionOrder[a.position] ?? 999; // 없으면 맨 뒤로
+                const bi = positionOrder[b.position] ?? 999;
+                return ai - bi;
+              })
+              .map((p) => (
+                <li
+                  key={p.id}
+                  className="relative [&_div]:transition-all [&_div]:duration-300 hover:[&_div]:shadow hover:[&_div]:bg-primary-white-100"
+                >
+                  <Link href={p.githubUrl as string} target="_blank">
+                    <Image
+                      src={p.imageUrl as string}
+                      alt="collaborator"
+                      width={96}
+                      height={96}
+                      className="absolute top-1/2 -translate-y-1/2"
+                    />
+                    <div className="ml-12 bg-bg-300 h-32 pl-17 pt-3 flex flex-col">
+                      <h5 className="text-16-semibold md:text-18-semibold">
+                        {p.name}
+                      </h5>
+                      <span className="text-12-regular md:text-14-regular">
+                        {p.position}
+                      </span>
+                      <span className="flex-1 justify-end flex flex-col pb-3 text-10-regular md:text-12-regular">
+                        {p.role}
+                      </span>
+                    </div>
+                  </Link>
+                </li>
+              ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
 }
