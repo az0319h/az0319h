@@ -21,9 +21,32 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: "Hong Sunghoon - Web Developer Portfolio",
   description:
-    "개인 포트폴리오 웹사이트로, 저를 소개하고 프로젝트와 경험을 한눈에 볼 수 있도록 제작했습니다. 자기소개, 경력 및 기술, 그리고 작업물들을 정리하여 방문자가 제 역량을 쉽게 이해할 수 있도록 구성했습니다.",
+    "A personal portfolio website designed to introduce myself and showcase my projects and experiences at a glance. It organizes my background, skills, and work to help visitors easily understand my capabilities.",
   icons: {
     icon: "/favicon.ico",
+  },
+  openGraph: {
+    title: "Hong Sunghoon - Web Developer Portfolio",
+    description:
+      "Personal portfolio website showcasing my profile, projects, and experiences in one place.",
+    url: "https://madebyhshfolio.site/",
+    siteName: "Hong Sunghoon Portfolio",
+    images: [
+      {
+        url: "/seo.png",
+        width: 1200,
+        height: 630,
+        alt: "Site Preview Image",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Hong Sunghoon - Web Developer Portfolio",
+    description:
+      "Personal portfolio website showcasing my profile, projects, and experiences in one place.",
+    images: ["/seo.png"],
   },
 };
 
