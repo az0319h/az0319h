@@ -30,7 +30,7 @@ export async function createContact(formData: {
     await transporter.sendMail({
       from: `"${formData.name}" <${formData.email}>`,
       replyTo: formData.email,
-      to: process.env.NEXT_PUBLIC_EMAIL_USER,
+      to: process.env.EMAIL_USER,
       subject: `[문의] ${readableType}`,
       text: `
     성함/회사: ${formData.name}
