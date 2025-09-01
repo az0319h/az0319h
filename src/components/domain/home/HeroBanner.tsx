@@ -2,8 +2,7 @@ import { ProjectPayload } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 import badge from "@/assets/images/badge.svg";
-import { IoSpeedometerOutline, IoAccessibilityOutline } from "react-icons/io5";
-import { TbSeo } from "react-icons/tb";
+import { MdInsights } from "react-icons/md";
 
 export default async function HeroBanner({ data }: { data: ProjectPayload }) {
   // participants가 배열이면 그대로, 객체면 Object.values로 배열화, 없으면 빈 배열
@@ -46,7 +45,7 @@ export default async function HeroBanner({ data }: { data: ProjectPayload }) {
               <span className="text-14-regular lg:text-16-regular">-</span>
               <span className="text-14-regular lg:text-16-regular">
                 {" "}
-                {data.location}
+                {data.platform}
               </span>
             </div>
           </div>
@@ -78,22 +77,23 @@ export default async function HeroBanner({ data }: { data: ProjectPayload }) {
             </div>
           ))}
         </div>
-        <ul className="pt-6 md:pt-8 grid grid-cols-2 md:grid-cols-4   gap-y-6 [&_li]:flex  [&_li]:gap-1 [&_li]:flex-col [&_li]:justify-center  [&_li]:items-center [&_li>h4]:text-14-medium [&_li>span]:text-14-semibold">
+        <ul className="pt-6 md:pt-8 grid grid-cols-2 md:grid-cols-4 max-w-191.25 md:mx-auto  gap-y-6 [&_li]:flex  [&_li]:gap-1 [&_li]:flex-col [&_li]:justify-center  [&_li]:items-center [&_li>h4]:text-14-medium [&_li>span]:text-14-semibold">
           <li>
-            <IoSpeedometerOutline size={40} />
+            <MdInsights size={40} />
             <h4>P E R F O R M A N C E</h4>
             <span>{data.performanceScore}/100</span>
           </li>
-          <li>
-            <IoAccessibilityOutline size={40} />
-            <h4>A C C E S S I B I L I T Y</h4>
-            <span>{data.accessibilityScore}/100</span>
-          </li>
           <li className="!gap-0">
-            <TbSeo size={40} />
+            <MdInsights size={40} />
             <h4>S E O</h4>
             <span>{data.seoScore}/100</span>
           </li>
+          <li>
+            <MdInsights size={40} />
+            <h4>A C C E S S I B I L I T Y</h4>
+            <span>{data.accessibilityScore}/100</span>
+          </li>
+
           <li>
             <p className="text-20-bold">{data.overallScore}/100</p>
             <h4>O V E R A L L&nbsp;&nbsp;S C O R E</h4>

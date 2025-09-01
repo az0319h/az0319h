@@ -22,7 +22,7 @@ export async function createProject(
     // 기본 필드
     const title = String(formData.get("title") || "").trim();
     const tagline = String(formData.get("tagline") || "").trim();
-    const location = String(formData.get("location") || "").trim();
+    const platform = String(formData.get("platform") || "").trim();
     const description = String(formData.get("description") || "").trim();
     const projectUrl = String(formData.get("projectUrl") || "").trim();
     const projectGitHubUrl = String(
@@ -63,6 +63,7 @@ export async function createProject(
             id: String(pid),
             name: String(participant.name ?? "").trim(),
             role: String(participant.role ?? "").trim(),
+            position: participant.position?.trim() ?? "",
             githubUrl: participant.githubUrl?.trim() ?? "",
             imageUrl: participant.imageUrl?.trim() ?? "",
             createdAt: participant.createdAt ?? createdAt,
@@ -79,7 +80,7 @@ export async function createProject(
       createdAt,
       title,
       tagline,
-      location,
+      platform,
       description,
       projectUrl,
       projectImageUrl,

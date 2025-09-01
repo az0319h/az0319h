@@ -1,8 +1,19 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import { FaFacebookF, FaGithub, FaInstagram } from "react-icons/fa";
 
 export default function Footer() {
+  const pathname = usePathname();
+
+  const isProjects = pathname.startsWith("/projects/");
+
   return (
-    <footer className="py-6 md:py-9 bg-bg-100 z-30">
+    <footer
+      className={`py-6 md:py-9 z-30 ${
+        isProjects ? "bg-bg-400 -mx-5 px-5" : "bg-bg-100"
+      }`}
+    >
       <div className="flex flex-col-reverse items-center gap-9 md:grid md:grid-rows-2 md:grid-cols-3 md:gap-y-6">
         <span className="text-12-semibold md:text-14-semibold md:col-start-1  md:row-start-2 md:self-end md:justify-self-start">
           © 2025 Hong Sunghoon. ALL RIGHTS RESERVED.
