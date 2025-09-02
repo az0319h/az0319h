@@ -1,9 +1,8 @@
 import { readPersonalProjects } from "@/api/readPersonalProjects.action";
+import ProjectCard from "@/components/common/ProjectCard";
 
 export default async function PersonalProjectsTab() {
   const datas = await readPersonalProjects();
-
-  console.log(datas);
 
   return (
     <>
@@ -12,7 +11,11 @@ export default async function PersonalProjectsTab() {
           N O&nbsp;&nbsp;&nbsp;P R O J E C T S&nbsp;&nbsp;&nbsp;F O U N D . . .
         </div>
       ) : (
-        <div></div>
+        <div className="grid  grid-cols-1 gap-14 md:grid-cols-2 justify-items-center lg:grid-cols-3 lg:gap-y-25">
+          {datas.map((data) => (
+            <ProjectCard key={data.id} data={data} currentTab="3" />
+          ))}
+        </div>
       )}
     </>
   );
