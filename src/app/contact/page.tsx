@@ -5,9 +5,12 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { createContact } from "@/api/createContact.actions";
 import { ContactFormData, contactSchema } from "@/schemas";
 import { useNotification } from "@/context/NotificationContext";
+import { IoMdArrowDropdown } from "react-icons/io";
+import { useState } from "react";
 
 export default function ContactPage() {
   const { showNotification } = useNotification();
+  const [isOpen, setIsOpen] = useState(false);
 
   const {
     register,
@@ -79,19 +82,29 @@ export default function ContactPage() {
           <label className=" block text-14-regular mb-3 md:mb-4">
             I N Q U I R Y&nbsp;&nbsp;&nbsp;T Y P E *
           </label>
-          <select
-            {...register("type")}
-            className="cursor-pointer text-center w-full relative outline-none appearance-none border border-black-100 px-4 py-3 rounded-3xl"
-          >
-            <option value="COLLABORATION">C O L L A B O R A T I O N</option>
-            <option value="JOB INQUIRY">
-              J O B&nbsp;&nbsp;&nbsp;I N Q U I R Y
-            </option>
-            <option value="DEVELOPMENT REQUEST">
-              D E V E L O P M E N T&nbsp;&nbsp;&nbsp;R E Q U E S T
-            </option>
-            <option value="OTHER">O T H E R</option>
-          </select>
+          <div className="relative">
+            <select
+              {...register("type")}
+              onClick={() => setIsOpen((prev) => !prev)}
+              onBlur={() => setIsOpen(false)}
+              className=" cursor-pointer text-center w-full  outline-none appearance-none border border-black-100 px-4 py-3 rounded-3xl"
+            >
+              <option value="COLLABORATION">C O L L A B O R A T I O N</option>
+              <option value="JOB INQUIRY">
+                J O B&nbsp;&nbsp;&nbsp;I N Q U I R Y
+              </option>
+              <option value="DEVELOPMENT REQUEST">
+                D E V E L O P M E N T&nbsp;&nbsp;&nbsp;R E Q U E S T
+              </option>
+              <option value="OTHER">O T H E R</option>
+            </select>
+            <span className="pointer-events-none absolute inset-y-0 right-4 flex items-center">
+              <IoMdArrowDropdown
+                size={22}
+                className={`md:size-6 ${isOpen ? "rotate-180" : ""}`}
+              />
+            </span>
+          </div>
         </div>
 
         <div>
