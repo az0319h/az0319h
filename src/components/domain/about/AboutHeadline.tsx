@@ -69,7 +69,7 @@ export default function AboutHeadline() {
           animationData={scrollAnimation}
           loop
           autoplay
-          className="size-30 md:size-40 lg:size-45"
+          className="size-25 sm:size-30 md:size-40 lg:size-45"
         />
       </div>
     </div>
