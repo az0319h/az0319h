@@ -41,11 +41,11 @@ export default function AboutHeadline() {
   return (
     <div
       className="flex justify-center items-center 
-        h-[calc(100vh-4.875rem)] 
-        md:h-[calc(100vh-7.6875rem)] 
-        lg:h-[calc(100vh-7.6875rem)]"
+      h-[calc(100vh-4.875rem)] 
+      md:h-[calc(100vh-7.6875rem)] 
+      lg:h-[calc(100vh-7.6875rem)]"
     >
-      <h2 className="text-center text-3xl leading-10 font-bold md:text-6xl md:leading-18 lg:text-[5rem] lg:leading-24 break-words mb-36.5 md:mb-54 lg:mb-53">
+      <h2 className=" text-center text-2xl leading-8 sm:text-3xl sm:leading-10 font-bold md:text-6xl md:leading-18 lg:text-[5rem] lg:leading-24 break-words mb-36.5 md:mb-54 lg:mb-53">
         <div className="block">{renderAnimatedText(text1, 0)}</div>
         <div className="block">{renderAnimatedText(text2, 1)}</div>
       </h2>
