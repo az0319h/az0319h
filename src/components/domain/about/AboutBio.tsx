@@ -3,22 +3,20 @@ import { useState, useEffect, useRef } from "react";
 
 export default function AboutBio() {
   const [isVisible, setIsVisible] = useState(false);
-  const bioRef = useRef(null);
+  const bioRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        // 요소가 50% 이상 보일 때 애니메이션 시작
         if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
           setIsVisible(true);
         } else {
-          // 요소가 화면에서 벗어나면 애니메이션 리셋
           setIsVisible(false);
         }
       },
       {
-        threshold: [0.3], // 30% 보일 때 트리거
-        rootMargin: "-50px 0px", // 50px 여유 공간
+        threshold: [0.3],
+        rootMargin: "-50px 0px",
       }
     );
 
@@ -33,24 +31,25 @@ export default function AboutBio() {
     };
   }, []);
 
-  const text = `Hi there! I'm Bhavana Kulkarni, a passionate product designer crafting meaningful digital experiences. With over five years of expertise in UI/UX design, I specialize in creating user-centered solutions for SaaS platforms, mobile apps, and web interfaces. From intuitive designs and seamless interactions to scalable systems, I'm driven to transform complex challenges into elegant, impactful designs that enhance everyday experiences.`;
+  const text = `I am a developer with a strong focus on building web services that users can intuitively understand and conveniently use. With experience in React.js, Next.js, and Node.js, I have worked on solving problems through a UI/UX-centered approach and delivering high-quality services. My goal is to grow into a developer who not only implements features but also maximizes the value of the user experience.`;
 
-  // 특정 단어들을 볼드로 만들기 위한 설정
   const boldWords = [
-    "Bhavana Kulkarni",
-    "five years of expertise in UI/UX design",
-    "impactful designs that enhance everyday experiences",
+    "developer",
+    "React.js",
+    "Next.js",
+    "Node.js",
+    "UI/UX-centered approach",
+    "user experience",
   ];
 
-  // 텍스트를 단어별로 분리하고 볼드 처리
   const processText = () => {
     const words = text.split(" ");
 
     return words.map((word, index) => {
-      const cleanWord = word.replace(/[.,!]/g, ""); // 구두점 제거해서 매칭 확인
-      const delay = index * 80; // 각 단어마다 80ms 지연
+      const cleanWord = word.replace(/[.,!]/g, ""); // 구두점 제거
+      const delay = index * 60; // 단어마다 60ms 지연
 
-      // 볼드 처리할 단어인지 확인
+      // 볼드 처리 여부 확인
       const shouldBold = boldWords.some(
         (boldPhrase) =>
           boldPhrase.toLowerCase().includes(cleanWord.toLowerCase()) &&
@@ -62,7 +61,11 @@ export default function AboutBio() {
           key={index}
           className={`inline-block transition-all duration-500 ease-out mr-1 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-          } ${shouldBold ? "font-bold text-black-100/75" : ""}`}
+          } ${
+            shouldBold
+              ? "text-16-semibold md:text-22-semibold md:leading-10 lg:leading-12 text-primary-blue-200"
+              : ""
+          }`}
           style={{
             transitionDelay: `${delay}ms`,
           }}
@@ -74,9 +77,10 @@ export default function AboutBio() {
   };
 
   return (
-    <div ref={bioRef} className="text-20-bold text-gray-600 leading-relaxed   ">
-      <div>I CODE</div>
-      <div>WEB DEVELOPER</div>
+    <div
+      ref={bioRef}
+      className="max-w-191.25 mx-auto  pt-16 pb-30 md:pt-26 md:pb-40 lg:pt-36 lg:pb-50  text-center text-16-regular md:text-22-regular md:leading-10 lg:leading-12 lg:text-24-regular leading-relaxed"
+    >
       <div className="overflow-hidden">{processText()}</div>
     </div>
   );

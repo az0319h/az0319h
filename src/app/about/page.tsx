@@ -6,6 +6,7 @@ export default function AboutPage() {
     <div>
       <AboutHeadline />
       <AboutBio />
+      <div>다음 컨텐츠</div>
     </div>
   );
 }
