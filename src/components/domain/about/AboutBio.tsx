@@ -44,7 +44,6 @@ export default function AboutBio() {
 
   // 텍스트를 단어별로 분리하고 볼드 처리
   const processText = () => {
-    let processedText = text;
     const words = text.split(" ");
 
     return words.map((word, index) => {
