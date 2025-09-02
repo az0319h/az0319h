@@ -3,17 +3,26 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRightLong } from "react-icons/fa6";
 
-export default function ProjectCard({ data }: { data: ProjectPayload }) {
+export default function ProjectCard({
+  data,
+  currentTab,
+}: {
+  data: ProjectPayload;
+  currentTab: string;
+}) {
   return (
-    <Link href={`/projects/${data.id}`} className="block group ">
-      <div className="relative ">
+    <Link
+      href={`/projects/${data.id}?tab=${currentTab}`}
+      className="block group "
+    >
+      <div className="relative w-fit">
         <Image
           src={data.projectImageUrl}
           alt="projectImageUrl"
           width={370}
           height={0}
           unoptimized
-          className="block "
+          className="block"
         />
         <div
           className="

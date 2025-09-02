@@ -14,12 +14,17 @@ const positionOrder: Record<string, number> = {
 
 export default async function ProjectDetailPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ id: string }>;
+  searchParams: Promise<{ tab?: string }>;
 }) {
   const { id } = await params;
+  const { tab } = await searchParams;
+  const currentTab = (tab as "1" | "2" | "3") ?? "1";
+
   const data = await readProjectById(id);
-  const adjacent = await readAdjacentProjects(id);
+  const adjacent = await readAdjacentProjects(id, currentTab);
 
   if (!data) notFound();
   return (
@@ -27,7 +32,7 @@ export default async function ProjectDetailPage({
       <div className="hidden w-40 lg:block lg:fixed top-1/2 left-0 z-30 -translate-y-1/2">
         {adjacent.prev && (
           <Link
-            href={`/projects/${adjacent.prev.id}`}
+            href={`/projects/${adjacent.prev.id}?tab=${currentTab}`}
             className="group block relative overflow-hidden"
           >
             <Image
@@ -48,7 +53,7 @@ export default async function ProjectDetailPage({
       <div className="hidden w-40 lg:block lg:fixed top-1/2 -translate-y-1/2 right-0  z-30">
         {adjacent.next && (
           <Link
-            href={`/projects/${adjacent.next.id}`}
+            href={`/projects/${adjacent.next.id}?tab=${currentTab}`}
             className="group block relative overflow-hidden"
           >
             <Image

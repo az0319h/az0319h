@@ -35,7 +35,7 @@ export default async function HomePage() {
         ${idx >= 3 ? "lg:hidden" : ""} /* lg 이상에서는 3개까지만 */
       `}
             >
-              <ProjectCard data={data} />
+              <ProjectCard data={data} currentTab="1" />
             </div>
           ))}
         </div>
