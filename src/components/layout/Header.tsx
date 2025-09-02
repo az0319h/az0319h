@@ -33,7 +33,7 @@ export default function Header() {
     before:absolute before:bottom-0 before:content-[''] before:-z-10 
     before:bg-primary-white-100 before:h-full before:right-0 before:w-0
     before:transition-all before:duration-300 
-    hover:before:w-[75%] hover:md:before:w-[85%]
+    hover:before:w-[65%] hover:md:before:w-[60%]
   `;
 
   return (
@@ -100,19 +100,20 @@ export default function Header() {
               >
                 A B O U T
               </Link>
-              <Link
-                href="/projects"
-                className={`${baseClasses}`}
-                onClick={() => setIsOpen(false)}
-              >
-                P R O J E C T
-              </Link>
+
               <Link
                 href="/contact"
                 className={`${baseClasses}`}
                 onClick={() => setIsOpen(false)}
               >
                 C O N T A C T
+              </Link>
+              <Link
+                href="/projects"
+                className={`${baseClasses}`}
+                onClick={() => setIsOpen(false)}
+              >
+                P R O J E C T S
               </Link>
             </nav>
           </motion.div>

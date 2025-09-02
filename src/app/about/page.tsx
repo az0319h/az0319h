@@ -1,3 +1,9 @@
+import AboutHeadline from "@/components/domain/about/AboutHeadline";
+
 export default function AboutPage() {
-  return <div>Abount</div>;
+  return (
+    <div>
+      <AboutHeadline />
+    </div>
+  );
 }
