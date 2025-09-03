@@ -1,35 +1,9 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+
+import { useReveal } from "@/hooks";
 
 export default function AboutBio() {
-  const [isVisible, setIsVisible] = useState(false);
-  const bioRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
-          setIsVisible(true);
-        } else {
-          setIsVisible(false);
-        }
-      },
-      {
-        threshold: [0.3],
-        rootMargin: "-50px 0px",
-      }
-    );
-
-    if (bioRef.current) {
-      observer.observe(bioRef.current);
-    }
-
-    return () => {
-      if (bioRef.current) {
-        observer.unobserve(bioRef.current);
-      }
-    };
-  }, []);
+  const { ref, isVisible } = useReveal<HTMLDivElement>();
 
   const text = `I am a developer with a strong focus on building web services that users can intuitively understand and conveniently use. With experience in React.js, Next.js, and Node.js, I have worked on solving problems through a UI/UX-centered approach and delivering high-quality services. My goal is to grow into a developer who not only implements features but also maximizes the value of the user experience.`;
 
@@ -79,7 +53,7 @@ export default function AboutBio() {
   return (
     <>
       <div
-        ref={bioRef}
+        ref={ref}
         className="max-w-191.25 mx-auto  pt-16  md:pt-26  lg:pt-36   text-left text-16-regular md:text-22-regular md:leading-10 lg:leading-12 lg:text-24-regular leading-relaxed"
       >
         <div className="overflow-hidden">{processText()}</div>

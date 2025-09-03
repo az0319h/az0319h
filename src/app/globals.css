@@ -363,3 +363,15 @@ textarea {
   box-shadow: 10px 15px 35px -5px rgba(0, 0, 0, 0.25);
   transition: box-shadow 0.3s ease;
 }
+
+/* border  */
+.my-border {
+  border-bottom: 1px solid transparent; /* 기본 border는 투명 */
+  border-image: linear-gradient(
+      to right,
+      rgba(40, 40, 40, 0),
+      /* 왼쪽 끝 투명 */ rgba(40, 40, 40, 1),
+      /* 가운데 진하게 (#282828) */ rgba(40, 40, 40, 0) /* 오른쪽 끝 투명 */
+    )
+    1;
+}

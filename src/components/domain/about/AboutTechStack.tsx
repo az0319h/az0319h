@@ -1,6 +1,5 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
-import { FaJs, FaReact } from "react-icons/fa";
+import { FaReact } from "react-icons/fa";
 import nextjsIcon from "@/assets/images/nextJs.svg";
 import photoshopIcon from "@/assets/images/photoshop.svg";
 import {
@@ -14,36 +13,11 @@ import {
 } from "react-icons/si";
 import { RiTailwindCssFill } from "react-icons/ri";
 import Image from "next/image";
+import { useReveal } from "@/hooks";
+import { revealStyle } from "@/utils";
 
 export default function AboutTechStack() {
-  const [isVisible, setIsVisible] = useState(false);
-  const techStackRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting && entry.intersectionRatio > 0.3) {
-          setIsVisible(true);
-        } else {
-          setIsVisible(false);
-        }
-      },
-      {
-        threshold: [0.3],
-        rootMargin: "-50px 0px",
-      }
-    );
-
-    if (techStackRef.current) {
-      observer.observe(techStackRef.current);
-    }
-
-    return () => {
-      if (techStackRef.current) {
-        observer.unobserve(techStackRef.current);
-      }
-    };
-  }, []);
+  const { ref, isVisible } = useReveal<HTMLDivElement>();
 
   const techItems = [
     { icon: <FaReact size={26} color="#61DAFB" />, name: "React" },
@@ -69,14 +43,12 @@ export default function AboutTechStack() {
   ];
 
   return (
-    <div ref={techStackRef} className="max-w-191.25 mx-auto">
+    <div ref={ref} className="max-w-191.25 mx-auto pb-50 sm:pb-75 md:pb-100">
       <p
         className={`text-16-regular md:text-22-regular lg:text-24-regular py-6 transition-all duration-500 ease-out ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
         }`}
-        style={{
-          transitionDelay: "0ms",
-        }}
+        style={revealStyle(isVisible, 0, 0)}
       >
         I have worked with.
       </p>
@@ -90,9 +62,7 @@ export default function AboutTechStack() {
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-4"
               }`}
-              style={{
-                transitionDelay: `${(index + 1) * 100}ms`,
-              }}
+              style={revealStyle(isVisible, index + 1, 200)}
             >
               {tech.icon}
               <span className="text-14-regular">{tech.name}</span>
