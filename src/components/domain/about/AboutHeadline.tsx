@@ -50,7 +50,7 @@ export default function AboutHeadline() {
         if (currentY > lastScrollY && currentY > 50) {
           setShowIcon(true);
           setShowLottie(false);
-        } else if (currentY < lastScrollY) {
+        } else if (currentY === 0) {
           setShowIcon(false);
           setShowLottie(true);
         }

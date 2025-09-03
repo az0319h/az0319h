@@ -63,7 +63,7 @@ export default function AboutBio() {
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
           } ${
             shouldBold
-              ? "text-16-semibold md:text-22-semibold md:leading-10 lg:leading-12 text-primary-blue-200"
+              ? "text-16-semibold md:text-22-semibold lg:text-24-semibold md:leading-10 lg:leading-12 text-primary-blue-200"
               : ""
           }`}
           style={{
@@ -77,11 +77,13 @@ export default function AboutBio() {
   };
 
   return (
-    <div
-      ref={bioRef}
-      className="max-w-191.25 mx-auto  pt-16 pb-30 md:pt-26 md:pb-40 lg:pt-36 lg:pb-50  text-center text-16-regular md:text-22-regular md:leading-10 lg:leading-12 lg:text-24-regular leading-relaxed"
-    >
-      <div className="overflow-hidden">{processText()}</div>
-    </div>
+    <>
+      <div
+        ref={bioRef}
+        className="max-w-191.25 mx-auto  pt-16  md:pt-26  lg:pt-36   text-left text-16-regular md:text-22-regular md:leading-10 lg:leading-12 lg:text-24-regular leading-relaxed"
+      >
+        <div className="overflow-hidden">{processText()}</div>
+      </div>
+    </>
   );
 }

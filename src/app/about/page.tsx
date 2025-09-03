@@ -1,12 +1,34 @@
 import AboutBio from "@/components/domain/about/AboutBio";
 import AboutHeadline from "@/components/domain/about/AboutHeadline";
+import AboutTechStack from "@/components/domain/about/AboutTechStack";
 
 export default function AboutPage() {
   return (
     <div>
       <AboutHeadline />
       <AboutBio />
-      <div>다음 컨텐츠</div>
+      <AboutTechStack />
+      <h1>fefef</h1>
+      <h1>fefef</h1>
+      <h1>fefef</h1>
+      <h1>fefef</h1>
+      <h1>fefef</h1>
+      <h1>fefef</h1>
+      <h1>fefef</h1>
+      <h1>fefef</h1>
+      <h1>fefef</h1>
+      <h1>fefef</h1>
+      <h1>fefef</h1>
+      <h1>fefef</h1>
+      <h1>fefef</h1>
+      <h1>fefef</h1>
+      <h1>fefef</h1>
+      <h1>fefef</h1>
+      <h1>fefef</h1>
+      <h1>fefef</h1>
+      <h1>fefef</h1>
+      <h1>fefef</h1>
+      <h1>fefef</h1>
     </div>
   );
 }
