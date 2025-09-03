@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Lottie from "lottie-react";
 import scrollAnimation from "@/assets/lotties/scroll.json";
 import aboutIcon from "@/assets/images/about.svg";
+import profileImage from "@/assets/images/profile.png";
 import Image from "next/image";
 
 export default function AboutHeadline() {
@@ -10,6 +11,7 @@ export default function AboutHeadline() {
   const [showLottie, setShowLottie] = useState(false); // Lottie 표시 여부
   const [showIcon, setShowIcon] = useState(false); // 아이콘 표시 여부
   const [hasScrolled, setHasScrolled] = useState(false); // 스크롤 했는지 여부
+  const [showProfile, setShowProfile] = useState(false); // 프로필 표시 여부 (기본 true)
   const [lastScrollY, setLastScrollY] = useState(0);
 
   const text1 = "H I\u00A0\u00A0,\u00A0\u00A0I'M\u00A0\u00A0S U N G H O O N.";
@@ -29,9 +31,15 @@ export default function AboutHeadline() {
       setShowLottie(true);
     }, totalDuration + 500);
 
+    // 3. 텍스트 애니메이션 완료 후 프로필 이미지 표시
+    const profileTimer = setTimeout(() => {
+      setShowProfile(true);
+    }, totalDuration + 700);
+
     return () => {
       clearTimeout(textTimer);
       clearTimeout(lottieTimer);
+      clearTimeout(profileTimer);
     };
   }, [totalDuration]);
 
@@ -54,6 +62,13 @@ export default function AboutHeadline() {
           setShowIcon(false);
           setShowLottie(true);
         }
+      }
+
+      // scrollY === 0이면 보이고 아니면 숨김
+      if (currentY === 0) {
+        setShowProfile(true);
+      } else {
+        setShowProfile(false);
       }
 
       setLastScrollY(currentY);
@@ -130,6 +145,20 @@ export default function AboutHeadline() {
             className="sm:size-30 md:size-36 lg:size-40"
           />
         </div>
+      </div>
+      {/* 프로필 이미지 (scrollY===0일 때만 보임) */}
+      <div
+        className={`absolute right-0 bottom-0 transition-opacity duration-700 ${
+          showProfile ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        <Image
+          src={profileImage}
+          alt="profileImage"
+          width={100}
+          className="sm:size-40 md:size-70 lg:size-90"
+          unoptimized
+        />
       </div>
     </div>
   );
