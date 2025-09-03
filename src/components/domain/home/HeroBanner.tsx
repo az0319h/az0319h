@@ -63,16 +63,30 @@ export default async function HeroBanner({ data }: { data: ProjectPayload }) {
       <div className="bg-bg-300 -mx-5 py-10 px-5 lg:bg-bg-100 lg:w-180 lg:mx-auto lg:px-0 lg:hidden">
         <div className="flex justify-center ">
           {participants.map((participant) => (
-            <div key={participant.id} className="flex">
+            <div key={participant.id} className="flex relative group">
               {participant.imageUrl && (
-                <a href={participant.githubUrl} target="_blank">
-                  <Image
-                    src={participant.imageUrl}
-                    alt={`${participant.name}`}
-                    width={40}
-                    height={40}
-                  />
-                </a>
+                <>
+                  <a href={participant.githubUrl} target="_blank">
+                    <Image
+                      src={participant.imageUrl}
+                      alt={`${participant.name}`}
+                      width={40}
+                      height={40}
+                    />
+                  </a>
+
+                  {/* 툴팁 */}
+                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
+                    <div className="flex flex-col gap-1.5 items-center bg-black-100 text-white  text-14-regular  shadow px-3 py-2 rounded-lg  whitespace-nowrap">
+                      {participant.name}
+                      <span className="text-12-regular">
+                        {participant.role}
+                      </span>
+                      {/* 화살표 */}
+                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-black-100"></div>
+                    </div>
+                  </div>
+                </>
               )}
             </div>
           ))}
