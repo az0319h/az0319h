@@ -13,7 +13,7 @@ export default function AboutMyExperience() {
         style={revealStyle(isVisible, 0, 0)}
         className="text-3xl sm:text-4xl md:text-6xl  font-bold   mb-4 md:mb-12"
       >
-        E X P E R I E N C E&nbsp;&nbsp;
+        E X P E R I E N C E
       </h2>
       <ul className="[&_li]:flex [&_li]:items-center [&_li]:justify-between [&_li]:gap-6  [&_li]:py-5 md:[&_li]:py-6 [&_div]:flex [&_div]:flex-col [&_div]:gap-2 md:[&_div]:gap-3">
         {experiences.map((experience, index) => (

@@ -12,3 +12,21 @@ export const experiences = [
     period: "Feb 2022 - Aug 2023",
   },
 ];
+
+export const corebeliefs = [
+  {
+    title: "Continuous Growth",
+    description:
+      "Technology and design are constantly evolving. I strive to keep learning, improving, and creating better outcomes without ever standing still.",
+  },
+  {
+    title: "User-Centered Mindset",
+    description:
+      "Every project begins with the user. I design and build with empathy, aiming to deliver intuitive and meaningful experiences.",
+  },
+  {
+    title: "Collaboration & Trust",
+    description:
+      "Great services are not built alone but together. I value open collaboration and believe trust is the foundation for achieving shared goals.",
+  },
+];
