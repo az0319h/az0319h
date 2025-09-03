@@ -6,7 +6,7 @@ import AboutTechStack from "@/components/domain/about/AboutTechStack";
 
 export default function AboutPage() {
   return (
-    <div>
+    <div className="pb-10 sm:pb-20">
       <AboutHeadline />
       <AboutBio />
       <AboutTechStack />
