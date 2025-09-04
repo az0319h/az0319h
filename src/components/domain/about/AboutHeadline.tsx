@@ -5,6 +5,7 @@ import scrollAnimation from "@/assets/lotties/scroll.json";
 import aboutIcon from "@/assets/images/about.svg";
 import profileImage from "@/assets/images/profile.png";
 import Image from "next/image";
+import { toggleBodyScroll } from "@/utils";
 
 export default function AboutHeadline() {
   const [isVisible, setIsVisible] = useState(false); // 글자 애니메이션
@@ -13,6 +14,7 @@ export default function AboutHeadline() {
   const [hasScrolled, setHasScrolled] = useState(false); // 스크롤 했는지 여부
   const [showProfile, setShowProfile] = useState(false); // 프로필 표시 여부 (기본 true)
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [introDone, setIntroDone] = useState(false); // 인트로 완료 여부
 
   const text1 = "H I\u00A0\u00A0,\u00A0\u00A0I'M\u00A0\u00A0S U N G H O O N.";
   const text2 =
@@ -34,6 +36,7 @@ export default function AboutHeadline() {
     // 3. 텍스트 애니메이션 완료 후 프로필 이미지 표시
     const profileTimer = setTimeout(() => {
       setShowProfile(true);
+      setIntroDone(true);
     }, totalDuration + 700);
 
     return () => {
@@ -42,6 +45,11 @@ export default function AboutHeadline() {
       clearTimeout(profileTimer);
     };
   }, [totalDuration]);
+
+  useEffect(() => {
+    toggleBodyScroll(!introDone); // 인트로 안 끝났으면 스크롤 막기, 끝났으면 풀기
+    return () => toggleBodyScroll(false);
+  }, [introDone]);
 
   // 스크롤 감지
   useEffect(() => {

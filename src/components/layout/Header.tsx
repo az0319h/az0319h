@@ -8,6 +8,7 @@ import logo from "@/assets/images/logo.svg";
 import subLogo from "@/assets/images/subLogo.svg";
 import hamburgerMenu from "@/assets/images/hamburgerMenu.png";
 import AppLink from "@/components/common/AppLink";
+import { toggleBodyScroll } from "@/utils";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,6 +27,15 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  //body 스크롤 제어
+  useEffect(() => {
+    toggleBodyScroll(isOpen);
+
+    return () => {
+      toggleBodyScroll(false);
+    };
+  }, [isOpen]);
 
   // 공통 클래스
   const baseClasses = `
