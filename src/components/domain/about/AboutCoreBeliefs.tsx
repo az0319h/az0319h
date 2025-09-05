@@ -8,7 +8,7 @@ export default function AboutCoreBeliefs() {
   const { ref, isVisible } = useReveal<HTMLDivElement>();
 
   return (
-    <div ref={ref} className="flex justify-end">
+    <div ref={ref} className="flex justify-end pb-50 sm:pb-75 md:pb-100">
       <div className="md:max-w-7/10">
         <h2
           style={revealStyle(isVisible, 0, 0)}
