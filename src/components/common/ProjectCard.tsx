@@ -1,15 +1,17 @@
 import { ProjectPayload } from "@/types";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRightLong } from "react-icons/fa6";
 
-export default function ProjectCard({
+export default async function ProjectCard({
   data,
   currentTab,
 }: {
   data: ProjectPayload;
   currentTab: string;
 }) {
+  const t = await getTranslations("ProjectsPage");
   return (
     <Link
       href={`/projects/${data.id}?tab=${currentTab}`}
@@ -33,7 +35,7 @@ export default function ProjectCard({
           "
         >
           <div className="flex items-center gap-2 text-14-semibold">
-            <h4>V I E W&nbsp;&nbsp;&nbsp;P R O J E C T</h4>
+            <h4>{t("viewProject")}</h4>
             <FaArrowRightLong />
           </div>
         </div>

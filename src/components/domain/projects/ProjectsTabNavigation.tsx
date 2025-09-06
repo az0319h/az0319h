@@ -1,14 +1,16 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
+import { useTranslations } from "next-intl";
 
 const tabs = [
-  { id: "1", label: "A L L\u00A0\u00A0\u00A0P R O J E C T S" },
-  { id: "2", label: "T E A M\u00A0\u00A0\u00A0P R O J E C T S" },
-  { id: "3", label: "P E R S O N A L\u00A0\u00A0\u00A0P R O J E C T S" },
+  { id: "1", key: "all" },
+  { id: "2", key: "team" },
+  { id: "3", key: "personal" },
 ];
 
 export default function ProjectsTabNavigation() {
+  const t = useTranslations("ProjectsPage.tabs");
   const router = useRouter();
   const searchParams = useSearchParams();
   const currentTab = searchParams.get("tab") ?? "1";
@@ -31,7 +33,7 @@ export default function ProjectsTabNavigation() {
           }
       `}
         >
-          {tab.label}
+          {t(tab.key)}
         </button>
       ))}
     </div>

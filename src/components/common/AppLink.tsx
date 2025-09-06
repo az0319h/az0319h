@@ -1,7 +1,7 @@
 // components/common/AppLink.tsx
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { FaArrowRightLong } from "react-icons/fa6";
 
 interface AppLinkProps {

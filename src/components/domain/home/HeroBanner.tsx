@@ -3,8 +3,11 @@ import Image from "next/image";
 import Link from "next/link";
 import badge from "@/assets/images/badge.svg";
 import { MdInsights } from "react-icons/md";
+import { getTranslations } from "next-intl/server";
 
 export default async function HeroBanner({ data }: { data: ProjectPayload }) {
+  const t = await getTranslations("HomePage");
+
   // participants가 배열이면 그대로, 객체면 Object.values로 배열화, 없으면 빈 배열
   const participants = Array.isArray(data.participants)
     ? data.participants
@@ -94,23 +97,23 @@ export default async function HeroBanner({ data }: { data: ProjectPayload }) {
         <ul className="pt-6 md:pt-8 grid grid-cols-2 md:grid-cols-4 max-w-191.25 md:mx-auto  gap-y-6 [&_li]:flex  [&_li]:gap-1 [&_li]:flex-col [&_li]:justify-center  [&_li]:items-center [&_li>h4]:text-14-medium [&_li>span]:text-14-semibold">
           <li>
             <MdInsights size={40} />
-            <h4>P E R F O R M A N C E</h4>
+            <h4>{t("ScoreSection.performance")}</h4>
             <span>{data.performanceScore}/100</span>
           </li>
           <li className="!gap-0">
             <MdInsights size={40} />
-            <h4>S E O</h4>
+            <h4>{t("ScoreSection.seo")}</h4>
             <span>{data.seoScore}/100</span>
           </li>
           <li>
             <MdInsights size={40} />
-            <h4>A C C E S S I B I L I T Y</h4>
+            <h4>{t("ScoreSection.accessibility")}</h4>
             <span>{data.accessibilityScore}/100</span>
           </li>
 
           <li>
             <p className="text-20-bold">{data.overallScore}/100</p>
-            <h4>O V E R A L L&nbsp;&nbsp;S C O R E</h4>
+            <h4>{t("ScoreSection.overall")}</h4>
           </li>
         </ul>
       </div>

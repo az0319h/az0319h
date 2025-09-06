@@ -2,15 +2,18 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import logo from "@/assets/images/logo.svg";
 import subLogo from "@/assets/images/subLogo.svg";
 import hamburgerMenu from "@/assets/images/hamburgerMenu.png";
 import AppLink from "@/components/common/AppLink";
 import { toggleBodyScroll } from "@/utils";
+import { Link } from "@/i18n/routing";
+import LocaleSwitcher from "./LocaleSwitcher";
+import { useTranslations } from "next-intl";
 
 export default function Header() {
+  const t = useTranslations("Nav");
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -101,14 +104,14 @@ export default function Header() {
                 className={`${baseClasses}`}
                 onClick={() => setIsOpen(false)}
               >
-                H O M E
+                {t("home")}
               </Link>
               <Link
                 href="/about"
                 className={`${baseClasses}`}
                 onClick={() => setIsOpen(false)}
               >
-                A B O U T
+                {t("about")}
               </Link>
 
               <Link
@@ -116,15 +119,16 @@ export default function Header() {
                 className={`${baseClasses}`}
                 onClick={() => setIsOpen(false)}
               >
-                C O N T A C T
+                {t("contact")}
               </Link>
               <Link
                 href="/projects"
                 className={`${baseClasses}`}
                 onClick={() => setIsOpen(false)}
               >
-                P R O J E C T S
+                {t("projects")}
               </Link>
+              <LocaleSwitcher onClose={() => setIsOpen(false)} />
             </nav>
           </motion.div>
         )}

@@ -1,18 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { IoMdArrowDropdown } from "react-icons/io";
 
-interface AboutInterviewItemProps {
+interface Props {
   title: string;
-  description: string;
+  description: ReactNode; // string 대신 ReactNode로 명확히 지정
 }
 
-export default function AboutInterviewItem({
-  title,
-  description,
-}: AboutInterviewItemProps) {
+export default function InterviewItem({ title, description }: Props) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
