@@ -7,8 +7,10 @@ import { ContactFormData, contactSchema } from "@/schemas";
 import { useNotification } from "@/context/NotificationContext";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 export default function ContactPage() {
+  const t = useTranslations("ContactPage");
   const { showNotification } = useNotification();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -35,9 +37,7 @@ export default function ContactPage() {
 
   return (
     <div className="max-w-125 mx-auto">
-      <h2 className="text-center text-24-bold mb-10">
-        Hello. Let&apos;s talk.
-      </h2>
+      <h2 className="text-center text-24-bold mb-10">{t("title")}</h2>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col gap-10 lg:gap-12 w-full [&_input]:placeholder:text-black-100 [&_input]:w-full [&_input]:py-2 [&_input]:border-b [&_input]:border-black-100"
@@ -46,7 +46,7 @@ export default function ContactPage() {
           <input
             type="text"
             {...register("name")}
-            placeholder="Y O U R&nbsp;&nbsp;&nbsp;N A M E *"
+            placeholder={t("form.name")}
             className={`${
               errors.name &&
               "text-red-500 !border-red-500 placeholder:!text-red-500"
@@ -58,7 +58,7 @@ export default function ContactPage() {
           <input
             type="text"
             {...register("email")}
-            placeholder="Y O U R&nbsp;&nbsp;&nbsp;E M A I L *"
+            placeholder={t("form.email")}
             className={`${
               errors.email &&
               "text-red-500 !border-red-500 placeholder:!text-red-500"
@@ -70,7 +70,7 @@ export default function ContactPage() {
           <input
             type="text"
             {...register("phone")}
-            placeholder="Y O U R   P H O N E   N U M B E R"
+            placeholder={t("form.phone")}
             className={`${
               errors.phone &&
               "text-red-500 !border-red-500 placeholder:!text-red-500"
@@ -80,7 +80,7 @@ export default function ContactPage() {
 
         <div>
           <label className=" block text-14-regular mb-3 md:mb-4">
-            I N Q U I R Y&nbsp;&nbsp;&nbsp;T Y P E *
+            {t("form.type")}
           </label>
           <div className="relative">
             <select
@@ -89,14 +89,15 @@ export default function ContactPage() {
               onBlur={() => setIsOpen(false)}
               className=" cursor-pointer text-center w-full  outline-none appearance-none border border-black-100 px-4 py-3 rounded-3xl"
             >
-              <option value="COLLABORATION">C O L L A B O R A T I O N</option>
-              <option value="JOB INQUIRY">
-                J O B&nbsp;&nbsp;&nbsp;I N Q U I R Y
+              <option value="COLLABORATION">
+                {" "}
+                {t("form.types.collaboration")}
               </option>
+              <option value="JOB INQUIRY">{t("form.types.job")}</option>
               <option value="DEVELOPMENT REQUEST">
-                D E V E L O P M E N T&nbsp;&nbsp;&nbsp;R E Q U E S T
+                {t("form.types.devRequest")}
               </option>
-              <option value="OTHER">O T H E R</option>
+              <option value="OTHER">{t("form.types.other")}</option>
             </select>
             <span className="pointer-events-none absolute inset-y-0 right-4 flex items-center">
               <IoMdArrowDropdown
@@ -113,12 +114,12 @@ export default function ContactPage() {
               errors.message && "text-red-500"
             }`}
           >
-            Y O U R&nbsp;&nbsp;&nbsp;M E S S A G E *
+            {t("form.messageLabel")}
           </label>
           <textarea
             {...register("message")}
             rows={5}
-            placeholder="E N T E R   Y O U R   M E S S A G E"
+            placeholder={t("form.messagePlaceholder")}
             className={`${
               errors.message &&
               "text-red-500 !border-red-500 placeholder:!text-red-500"
@@ -134,7 +135,7 @@ export default function ContactPage() {
             className={`w-full border border-black-100 text-black-100 py-3 px-4 rounded-3xl text-16-semibold transition-all duration-300 hover:bg-black-100 hover:text-white
             ${isSubmitting ? "cursor-not-allowed" : ""}`}
           >
-            R E S E T
+            {t("form.reset")}
           </button>
           <button
             type="submit"
@@ -142,7 +143,7 @@ export default function ContactPage() {
             className={`w-full bg-black-100 text-white py-3.25 px-4 rounded-3xl text-16-semibold hover:opacity-80 transition-all duration-300
             ${isSubmitting ? "cursor-not-allowed" : ""}`}
           >
-            {isSubmitting ? "S E N D I N G . . ." : "S E N D"}
+            {isSubmitting ? t("form.sending") : t("form.send")}
           </button>
         </div>
       </form>

@@ -15,8 +15,10 @@ import { RiTailwindCssFill } from "react-icons/ri";
 import Image from "next/image";
 import { useReveal } from "@/hooks";
 import { revealStyle } from "@/utils";
+import { useTranslations } from "next-intl";
 
 export default function AboutTechStack() {
+  const t = useTranslations("ProjectsPage");
   const { ref, isVisible } = useReveal<HTMLDivElement>();
 
   const techItems = [
@@ -50,7 +52,7 @@ export default function AboutTechStack() {
         }`}
         style={revealStyle(isVisible, 0, 0)}
       >
-        I have worked with.
+        {t("techStackTitle")}
       </p>
       <div>
         <ul className="flex flex-wrap gap-3 lg:gap-4">

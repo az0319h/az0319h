@@ -1,0 +1,121 @@
+{
+  "HomePage": {
+    "title": "2 0 2 5 년\u00A0\u00A0\u00A0나 의\u00A0\u00A0\u00A0최 신\u00A0\u00A0\u00A0작 업 물",
+    "appLink": "최 신\u00A0\u00A0\u00A0프 로 젝 트",
+    "more": "프 로 젝 트\u00A0\u00A0\u00A0더 보 기",
+    "ScoreSection": {
+      "performance": "성 능",
+      "seo": "검 색 엔 진 최 적 화",
+      "accessibility": "접 근 성",
+      "overall": "종 합\u00A0\u00A0점 수"
+    }
+  },
+  "Nav": {
+    "home": "메 인",
+    "about": "소 개",
+    "contact": "문 의 하 기",
+    "projects": "프 로 젝 트"
+  },
+  "ProjectsPage": {
+    "tabs": {
+      "all": "모 든\u00A0\u00A0\u00A0프 로 젝 트",
+      "team": "팀\u00A0\u00A0\u00A0프 로 젝 트",
+      "personal": "개 인\u00A0\u00A0\u00A0프 로 젝 트"
+    },
+    "viewProject": "프 로 젝 트\u00A0\u00A0\u00A0상 세 보 기",
+    "viewOnGithub": "GitHub 바로가기",
+    "detail": {
+      "prev": "이 전",
+      "next": "다 음",
+      "labels": {
+        "about": "프로젝트  소개",
+        "techStack": "기술 스택",
+        "category": "카테고리"
+      },
+      "lighthouseTitle": "라 이 트 하 우 스\u00A0\u00A0\u00A0점 수",
+      "score": {
+        "performance": "성 능",
+        "seo": "검 색 엔 진 최 적 화",
+        "accessibility": "접 근 성"
+      },
+      "collaborators": "프 로 젝 트\u00A0\u00A0\u00A0협 업 자"
+    },
+    "bio": "저는 사용자가 직관적으로 이해하고 편리하게 이용할 수 있는 웹 서비스를 만드는 데 집중하는 프론트엔드 개발자입니다. React.js, Next.js, Node.js의 경험을 바탕으로, UI/UX 중심적인 접근을 통해 문제를 해결하고 완성도 높은 서비스를 만들어 왔습니다. 제 목표는 단순히 기능을 구현하는 데 그치지 않고, 사용자 경험의 가치를 극대화하는 개발자로 꾸준히 성장하는 것입니다.",
+    "techStackTitle": "제가 경험한 기술들입니다.",
+    "experienceTitle": "나 의\u00A0\u00A0경 험",
+    "experienceList": [
+      {
+        "title": "코드잇 부트캠프 수료 · 풀스택 개발자",
+        "company": "코드잇, 서울, 대한민국",
+        "companyUrl": "https://sprint.codeit.kr/",
+        "period": "2025년 1월 – 2025년 8월"
+      },
+      {
+        "title": "정보보호 특기병 · 육군 제32보병사단",
+        "company": "32보병사단, 세종, 대한민국",
+        "companyUrl": "https://www.mma.go.kr/contents.do?mc=mma0000516",
+        "period": "2022년 2월 – 2023년 8월"
+      }
+    ],
+    "coreBeliefTitle": "나 의\u00A0\u00A0핵 심\u00A0\u00A0가 치 관",
+    "coreBeliefsList": [
+      {
+        "title": "지속적인 성장",
+        "description": "기술과 디자인은 끊임없이 발전하고 있습니다. 저는 멈추지 않고 끊임없이 배우고, 개선하고, 더 나은 결과를 만들어내기 위해 노력합니다."
+      },
+      {
+        "title": "사용자 중심 사고",
+        "description": "모든 프로젝트는 사용자로부터 시작됩니다. 저는 사용자와의 공감을 바탕으로 디자인하고 제작하며, 직관적이고 의미 있는 경험을 제공하기 위해 노력합니다."
+      },
+      {
+        "title": "협업과 신뢰",
+        "description": "훌륭한 서비스는 혼자가 아닌 함께 만들어 집니다. 저는 열린 협업을 중시하며, 신뢰가 공동의 목표를 달성하는 기반이라고 믿습니다."
+      }
+    ],
+    "interviewTitle": "나 의\u00A0\u00A0이 야 기",
+    "interviewsList": [
+      {
+        "title": "프론트엔드 개발자 직무에 지원한 이유는 무엇인가요?",
+        "description": "저는 <strong class=\"text-primary-blue-200\">C</strong>와 <strong class=\"text-primary-blue-200\">Java</strong>로 프로그래밍을 시작했지만, 결과물이 즉각적으로 눈에 보이지 않는 한계로 인해 흥미를 잃었습니다. 반면 <strong class=\"text-primary-blue-200\">웹 개발</strong>은 코드를 작성하자마자 화면에 결과가 반영되는 점이 매력적으로 다가왔고, 이를 통해 <strong class=\"text-primary-blue-200\">클론 코딩</strong>과 다양한 학습 자료를 활용하여 웹 전반에 대한 이해를 넓혀갔습니다. 이후 <strong class=\"text-primary-blue-200\">백엔드 데이터</strong>를 프론트엔드에 어떻게 연동할 수 있을지 고민하다가 <strong class=\"text-primary-blue-200\">풀스택 부트캠프</strong>에 참여하였고, 여러 <strong class=\"text-primary-blue-200\">팀 프로젝트</strong>를 통해 프론트엔드와 백엔드의 구조와 상호작용을 체계적으로 익힐 수 있었습니다. 그 과정에서 모든 영역을 다루는 <strong class=\"text-primary-blue-200\">풀스택 개발자</strong>의 경험도 쌓았지만, 무엇보다 제가 가장 잘하고 즐길 수 있는 분야가 <strong class=\"text-primary-blue-200\">프론트엔드</strong>라는 확신을 갖게 되었고, 이에 <strong class=\"text-primary-blue-200\">프론트엔드 개발자</strong>로 지원하게 되었습니다."
+      },
+      {
+        "title": "프론트엔드 개발자로서 가장 큰 강점은 무엇인가요?",
+        "description": "저의 가장 큰 장점은 <strong class=\"text-primary-blue-200\">UI/UX</strong>를 명확하게 이해하고 구현할 수 있는 능력입니다. 저는 코드를 효율적이고 구조적으로 작성하는 것도 중요하지만, 궁극적으로 사용자가 마주하는 <strong class=\"text-primary-blue-200\">화면</strong>과 그 안에서 이루어지는 <strong class=\"text-primary-blue-200\">경험</strong>이 가장 핵심이라고 생각합니다. 이러한 관점을 바탕으로 항상 <strong class=\"text-primary-blue-200\">사용자 중심</strong>의 화면과 <strong class=\"text-primary-blue-200\">인터랙션</strong>을 고민하며 개발해왔습니다. 특히 여러 <strong class=\"text-primary-blue-200\">팀 프로젝트</strong>에서 <strong class=\"text-primary-blue-200\">프론트엔드 리더</strong> 역할을 맡아 UI/UX 전반을 주도하였고, <strong class=\"text-primary-blue-200\">피어 리뷰</strong> 과정에서도 UI와 UX에 대한 긍정적인 평가를 가장 많이 받았습니다. 이처럼 <strong class=\"text-primary-blue-200\">사용자 경험</strong>을 고려하는 역량이 저의 가장 큰 강점이라고 자신 있게 말씀드릴 수 있습니다."
+      },
+      {
+        "title": "자기 개발을 위해 어떤 노력을 해왔나요?",
+        "description": "저는 <strong class=\"text-primary-blue-200\">온라인 강의</strong>와 <strong class=\"text-primary-blue-200\">부트캠프</strong>를 통해 지식을 습득하고, <strong class=\"text-primary-blue-200\">CRUD</strong> 구현과 다양한 <strong class=\"text-primary-blue-200\">라이브러리</strong>·<strong class=\"text-primary-blue-200\">프레임워크</strong>를 반복 학습하며 실무 감각을 키웠습니다. 또한 의문이 생기면 바로 정리하고 <strong class=\"text-primary-blue-200\">현업 개발자</strong>에게 피드백을 받아 이해를 심화했습니다. 이 과정을 통해 <strong class=\"text-primary-blue-200\">새로운 기술</strong>을 빠르게 습득·적용할 수 있는 역량을 쌓았고, 자신 있게 <strong class=\"text-primary-blue-200\">업무</strong>에 임할 수 있는 개발자로 성장하고 있습니다."
+      }
+    ]
+  },
+  "ContactPage": {
+    "title": "안녕하세요.\u00A0\u00A0문의해 주세요.",
+    "form": {
+      "name": "이 름 *",
+      "email": "이 메 일 *",
+      "phone": "전 화 번 호",
+      "type": "문 의 종 류 *",
+      "types": {
+        "collaboration": "협 업",
+        "job": "채 용 문 의",
+        "devRequest": "개 발 요 청",
+        "other": "기 타"
+      },
+      "messageLabel": "문 의 내 용 *",
+      "messagePlaceholder": "내 용 을\u00A0\u00A0입 력 해 주 세 요",
+      "reset": "초 기 화",
+      "send": "문 의 하 기",
+      "sending": "보 내 는 중 . . ."
+    },
+    "messages": {
+      "success": "문의가 성공적으로 전송되었습니다! 빠른 시일 내에 확인 후 연락드리겠습니다.",
+      "error": "메시지를 보내는 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요."
+    }
+  },
+  "AboutPage": {
+    "headline": {
+      "line1": "코 드 와\u00A0\u00A0디 자 인 을\u00A0\u00A0잇 는",
+      "line2": "크 리 에 이 티 브\u00A0\u00A0개 발 자\u00A0\u00A0“홍 성 훈”"
+    }
+  }
+}

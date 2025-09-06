@@ -2,11 +2,15 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import { Space_Grotesk } from "next/font/google";
 
-import "./globals.css";
+import "../globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { UserProvider } from "@/context/UserContext";
 import { NotificationProvider } from "@/context/NotificationContext";
+import { routing } from "@/i18n/routing";
+import { notFound } from "next/navigation";
+import { getMessages } from "next-intl/server";
+import { hasLocale, NextIntlClientProvider } from "next-intl";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -50,24 +54,34 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }>) {
-  return (
-    <html>
-      <body className={`${poppins.className} flex flex-col min-h-screen  px-5`}>
-        <NotificationProvider>
-          <UserProvider>
-            <Header />
-            <div className="flex-1  w-full py-5 md:py-10 lg:py-14 max-w-screen-lg mx-auto">
-              {children}
-            </div>
+  const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) {
+    notFound();
+  }
 
-            <Footer />
-          </UserProvider>
-        </NotificationProvider>
+  const messages = await getMessages();
+
+  return (
+    <html lang={locale}>
+      <body className={`${poppins.className} flex flex-col min-h-screen  px-5`}>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          <NotificationProvider>
+            <UserProvider>
+              <Header />
+              <div className="flex-1  w-full py-5 md:py-10 lg:py-14 max-w-screen-lg mx-auto">
+                {children}
+              </div>
+              <Footer />
+            </UserProvider>
+          </NotificationProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

@@ -1,0 +1,121 @@
+{
+  "HomePage": {
+    "title": "M Y\u00A0\u00A0\u00A0L A T E S T\u00A0\u00A0\u00A0P R O J E C T\u00A0\u00A0\u00A02 0 2 5",
+    "appLink": "N E W E S T\u00A0\u00A0\u00A0P R O J E C T S",
+    "more": "M\u00A0\u00A0O\u00A0\u00A0R\u00A0\u00A0\u00A0E",
+    "ScoreSection": {
+      "performance": "P E R F O R M A N C E",
+      "seo": "S E O",
+      "accessibility": "A C C E S S I B I L I T Y",
+      "overall": "O V E R A L L\u00A0\u00A0S C O R E"
+    }
+  },
+  "Nav": {
+    "home": "H O M E",
+    "about": "A B O U T",
+    "contact": "C O N T A C T",
+    "projects": "P R O J E C T S"
+  },
+  "ProjectsPage": {
+    "tabs": {
+      "all": "A L L\u00A0\u00A0\u00A0P R O J E C T S",
+      "team": "T E A M\u00A0\u00A0\u00A0P R O J E C T S",
+      "personal": "P E R S O N A L\u00A0\u00A0\u00A0P R O J E C T S"
+    },
+    "viewProject": "V I E W\u00A0\u00A0\u00A0P R O J E C T",
+    "viewOnGithub": "View on GitHub",
+    "detail": {
+      "prev": "P R E V",
+      "next": "N E X T",
+      "labels": {
+        "about": "ABOUT",
+        "techStack": "TECH STACK",
+        "category": "CATEGORY"
+      },
+      "lighthouseTitle": "L I G H T\u00A0\u00A0\u00A0H O U S E\u00A0\u00A0\u00A0P O I N T",
+      "score": {
+        "performance": "P E R F O R M A N C E",
+        "seo": "S E O",
+        "accessibility": "A C C E S S I B I L I T Y"
+      },
+      "collaborators": "C O L L A B O R A T O R S"
+    },
+    "bio": "I am a developer with a strong focus on building web services that users can intuitively understand and conveniently use. With experience in React.js, Next.js, and Node.js, I have worked on solving problems through a UI/UX-centered approach and delivering high-quality services. My goal is to grow into a developer who not only implements features but also maximizes the value of the user experience.",
+    "techStackTitle": "I have worked with.",
+    "experienceTitle": "E X P E R I E N C E",
+    "experienceList": [
+      {
+        "title": "Completed Codeit Bootcamp · Full-stack Developer",
+        "company": "Codeit, Seoul, South Korea",
+        "companyUrl": "https://sprint.codeit.kr/",
+        "period": "Jan 2025 – Aug 2025"
+      },
+      {
+        "title": "Information Security Specialist · 32nd Infantry Division, ROK Army",
+        "company": "32nd Infantry Division, Sejong, South Korea",
+        "companyUrl": "https://www.mma.go.kr/contents.do?mc=mma0000516",
+        "period": "Feb 2022 – Aug 2023"
+      }
+    ],
+    "coreBeliefTitle": "C O R E\u00A0\u00A0B E L I E F S",
+    "coreBeliefsList": [
+      {
+        "title": "Continuous Growth",
+        "description": "Technology and design are constantly evolving. I strive to keep learning, improving, and creating better outcomes without ever standing still."
+      },
+      {
+        "title": "User-Centered Mindset",
+        "description": "Every project begins with the user. I design and build with empathy, aiming to deliver intuitive and meaningful experiences."
+      },
+      {
+        "title": "Collaboration & Trust",
+        "description": "Great services are not built alone but together. I value open collaboration and believe trust is the foundation for achieving shared goals."
+      }
+    ],
+    "interviewTitle": "I N T E R V I E W",
+    "interviewsList": [
+      {
+        "title": "Why did you apply for a frontend developer position?",
+        "description": "I started programming with <strong className=\"text-primary-blue-200\">C</strong> and <strong className=\"text-primary-blue-200\">Java</strong>, but soon lost interest as the results were not immediately visible. In contrast, <strong className=\"text-primary-blue-200\">web development</strong> fascinated me because the output was reflected on the screen as soon as I wrote the code. This led me to broaden my understanding of the web through <strong className=\"text-primary-blue-200\">clone coding</strong> and various learning resources. Later, while exploring how <strong className=\"text-primary-blue-200\">backend</strong> data could be integrated into the frontend, I joined a <strong className=\"text-primary-blue-200\">full-stack bootcamp</strong>, where I gained systematic knowledge of how the frontend and backend are structured and interact through several <strong className=\"text-primary-blue-200\">team projects</strong>. During this process, I experienced the role of a <strong className=\"text-primary-blue-200\">full-stack developer</strong> who can handle all areas, but I eventually realized that the field I excel in and truly enjoy is <strong className=\"text-primary-blue-200\">frontend development</strong>. This is why I decided to apply as a <strong className=\"text-primary-blue-200\">frontend developer</strong>."
+      },
+      {
+        "title": "What is your greatest strength as a frontend developer?",
+        "description": "My greatest strength is the ability to clearly understand and implement <strong className=\"text-primary-blue-200\">UI/UX</strong>. While writing efficient and well-structured code is important, I believe the most critical aspect lies in the interface users interact with and the <strong className=\"text-primary-blue-200\">user experiences</strong> they have throughout that process. Based on this perspective, I have always focused on designing <strong className=\"text-primary-blue-200\">user-centered</strong> screens and <strong className=\"text-primary-blue-200\">interactions</strong>. In particular, I often took the lead in <strong className=\"text-primary-blue-200\">frontend roles</strong> during <strong className=\"text-primary-blue-200\">team projects</strong>, driving <strong className=\"text-primary-blue-200\">UI/UX decisions</strong>, and consistently received positive <strong className=\"text-primary-blue-200\">feedback</strong> about my contributions in <strong className=\"text-primary-blue-200\">peer reviews</strong>. I am confident that this ability to prioritize and deliver strong <strong className=\"text-primary-blue-200\">user experiences</strong> is my greatest strength."
+      },
+      {
+        "title": "What efforts have you made for self-development?",
+        "description": "I have consistently devoted myself to <strong className=\"text-primary-blue-200\">self-development</strong> in order to grow as a <strong className=\"text-primary-blue-200\">frontend developer</strong>. I systematically acquired knowledge and skills through <strong className=\"text-primary-blue-200\">online courses</strong> and <strong className=\"text-primary-blue-200\">bootcamps</strong>, and strengthened my practical understanding by repeatedly practicing <strong className=\"text-primary-blue-200\">CRUD</strong> implementations and working with various <strong className=\"text-primary-blue-200\">libraries</strong> and <strong className=\"text-primary-blue-200\">frameworks</strong>. Whenever I encountered challenges or had questions during the <strong className=\"text-primary-blue-200\">learning process</strong>, I immediately organized them and sought <strong className=\"text-primary-blue-200\">advice</strong> from experienced developers to deepen my understanding. These habits have allowed me to quickly learn and apply <strong className=\"text-primary-blue-200\">new technologies</strong>, and have helped me grow into a developer who can confidently take on professional <strong className=\"text-primary-blue-200\">responsibilities</strong>."
+      }
+    ]
+  },
+  "ContactPage": {
+    "title": "Hello. Let’s talk.",
+    "form": {
+      "name": "Y O U R\u00A0\u00A0\u00A0N A M E *",
+      "email": "Y O U R\u00A0\u00A0\u00A0E M A I L *",
+      "phone": "Y O U R\u00A0\u00A0P H O N E\u00A0\u00A0N U M B E R",
+      "type": "I N Q U I R Y\u00A0\u00A0\u00A0T Y P E *",
+      "types": {
+        "collaboration": "C O L L A B O R A T I O N",
+        "job": "J O B\u00A0\u00A0\u00A0I N Q U I R Y",
+        "devRequest": "D E V E L O P M E N T\u00A0\u00A0\u00A0R E Q U E S T",
+        "other": "O T H E R"
+      },
+      "messageLabel": "Y O U R\u00A0\u00A0\u00A0M E S S A G E *",
+      "messagePlaceholder": "E N T E R\u00A0\u00A0Y O U R\u00A0\u00A0M E S S A G E",
+      "reset": "R E S E T",
+      "send": "S E N D",
+      "sending": "S E N D I N G . . ."
+    },
+    "messages": {
+      "success": "Thank you! Your message has been sent successfully.",
+      "error": "An error occurred while sending your message."
+    }
+  },
+  "AboutPage": {
+    "headline": {
+      "line1": "H I\u00A0\u00A0,\u00A0\u00A0I'M\u00A0\u00A0S U N G H O O N.",
+      "line2": "I'M\u00A0\u00A0A\u00A0\u00A0W E B\u00A0\u00A0D E V E L O P E R."
+    }
+  }
+}

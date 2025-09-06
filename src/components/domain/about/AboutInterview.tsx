@@ -1,26 +1,29 @@
 "use client";
-import { interviews } from "@/constants";
 import { useReveal } from "@/hooks";
 import { revealStyle } from "@/utils";
-import AboutInterviewItem from "./AboutInterviewItem";
+import { useTranslations } from "next-intl";
+import { Interview } from "@/types";
+import InterviewItem from "./InterviewItem";
+import parse from "html-react-parser";
 
 export default function AboutInterview() {
+  const t = useTranslations("ProjectsPage");
   const { ref, isVisible } = useReveal<HTMLDivElement>();
 
   return (
     <div ref={ref} className="md:max-w-7/10">
       <h2
         style={revealStyle(isVisible, 0, 0)}
-        className="text-3xl sm:text-4xl md:text-6xl  font-bold   mb-4 md:mb-12"
+        className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 md:mb-12 "
       >
-        I N T E R V I E W
+        {t("interviewTitle")}
       </h2>
-      <ul className="">
-        {interviews.map((interview, index) => (
+      <ul>
+        {(t.raw("interviewsList") as Interview[]).map((interview, index) => (
           <nav key={index} style={revealStyle(isVisible, index + 1, 500)}>
-            <AboutInterviewItem
+            <InterviewItem
               title={interview.title}
-              description={interview.description}
+              description={parse(interview.description)}
             />
           </nav>
         ))}

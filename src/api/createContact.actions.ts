@@ -1,6 +1,7 @@
 "use server";
 
 import nodemailer from "nodemailer";
+import { getTranslations } from "next-intl/server";
 
 export async function createContact(formData: {
   name: string;
@@ -70,15 +71,17 @@ export async function createContact(formData: {
   `,
     });
 
+    const t = await getTranslations("ContactPage.messages");
     return {
       success: true,
-      message: "Your message has been sent successfully!",
+      message: t("success"),
     };
   } catch (error) {
+    const t = await getTranslations("ContactPage.messages");
     console.log("Email Send Failed!", error);
     return {
       success: false,
-      message: "An error occurred while sending your message.",
+      message: t("error"),
     };
   }
 }

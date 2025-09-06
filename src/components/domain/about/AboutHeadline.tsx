@@ -6,6 +6,7 @@ import aboutIcon from "@/assets/images/about.svg";
 import profileImage from "@/assets/images/profile.png";
 import Image from "next/image";
 import { toggleBodyScroll } from "@/utils";
+import { useTranslations } from "next-intl";
 
 export default function AboutHeadline() {
   const [isVisible, setIsVisible] = useState(false); // 글자 애니메이션
@@ -15,10 +16,10 @@ export default function AboutHeadline() {
   const [showProfile, setShowProfile] = useState(false); // 프로필 표시 여부 (기본 true)
   const [lastScrollY, setLastScrollY] = useState(0);
   const [introDone, setIntroDone] = useState(false); // 인트로 완료 여부
+  const t = useTranslations("AboutPage.headline");
 
-  const text1 = "H I\u00A0\u00A0,\u00A0\u00A0I'M\u00A0\u00A0S U N G H O O N.";
-  const text2 =
-    "I'M\u00A0\u00A0A\u00A0\u00A0W E B\u00A0\u00A0D E V E L O P E R.";
+  const text1 = t("line1");
+  const text2 = t("line2");
   const charDelay = 50;
   const totalDuration = (text1.length + text2.length) * charDelay;
 

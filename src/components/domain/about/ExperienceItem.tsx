@@ -1,18 +1,12 @@
+import { Experience } from "@/types";
 import Link from "next/link";
-
-interface ExperienceItemProps {
-  title: string; // h3 제목
-  company: string; // 회사명 (링크 텍스트)
-  companyUrl: string; // 회사 링크
-  period: string; // 기간
-}
 
 export default function ExperienceItem({
   title,
   company,
   companyUrl,
   period,
-}: ExperienceItemProps) {
+}: Experience) {
   return (
     <li className="my-border flex items-center justify-between gap-6 py-5 md:py-6">
       <div className="flex flex-col gap-2 md:gap-3">

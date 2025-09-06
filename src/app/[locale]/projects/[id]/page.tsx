@@ -1,6 +1,7 @@
 import { readAdjacentProjects } from "@/api/readAdjacentProjects.action";
 import { readProjectById } from "@/api/readProject.action";
 import Shortcut from "@/components/domain/projects/Shortcut";
+import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -19,6 +20,7 @@ export default async function ProjectDetailPage({
   params: Promise<{ id: string }>;
   searchParams: Promise<{ tab?: string }>;
 }) {
+  const t = await getTranslations("ProjectsPage.detail");
   const { id } = await params;
   const { tab } = await searchParams;
   const currentTab = (tab as "1" | "2" | "3") ?? "1";
@@ -45,7 +47,7 @@ export default async function ProjectDetailPage({
               className="transform -translate-x-5 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"
             />
             <span className="absolute left-1/2 top-1/2 -translate-1/2 text-white text-14-medium  opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              P R E V
+              {t("prev")}
             </span>
           </Link>
         )}
@@ -66,7 +68,7 @@ export default async function ProjectDetailPage({
               className="transform translate-x-5 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"
             />
             <span className="absolute left-1/2 top-1/2 -translate-1/2 text-white text-14-medium  opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              N E X T
+              {t("next")}
             </span>
           </Link>
         )}
@@ -98,13 +100,13 @@ export default async function ProjectDetailPage({
         <div className="flex flex-col gap-7 md:gap-10 px-7 mb-10 md:mb-15 md:flex-row">
           <div>
             <h4 className="text-center md:text-left ">
-              <span className="text-12-bold">ABOUT: </span>
+              <span className="text-12-bold">{t("labels.about")}: </span>
               <em className="text-12-regular">{data.description}</em>
             </h4>
           </div>
           <div className="md:flex md:flex-col-reverse md:justify-between md:min-w-4/10">
             <h4 className="text-center md:text-left">
-              <span className="text-12-bold">TECH STACK: </span>
+              <span className="text-12-bold">{t("labels.techStack")}: </span>
               {data.tags.map((tag, idx) => (
                 <em key={idx} className="text-12-regular">
                   {tag}
@@ -113,29 +115,29 @@ export default async function ProjectDetailPage({
               ))}
             </h4>
             <h4 className="text-center md:text-left">
-              <span className="text-12-bold">CATEGORY: </span>
+              <span className="text-12-bold">{t("labels.category")}: </span>
               <span className="text-12-regular">{data.category}</span>
             </h4>
           </div>
         </div>
         <div className="mb-10 md:mb-12">
           <h5 className="text-center text-16-semibold mb-7">
-            L I G H T&nbsp;&nbsp;&nbsp;H O U S E&nbsp;&nbsp;&nbsp;P O I N T
+            {t("lighthouseTitle")}
           </h5>
           <ul className="flex  justify-center md:gap-12 gap-6 items-center md:[&_span]:text-14-semibold [&_span]:text-12-semibold [&_h4]:text-center  md:[&_h4]:text-14-regular [&_h4]:text-12-regular [&_li]:flex [&_li]:flex-col   [&_li]:items-center [&_li]:gap-0.5 md:[&_li]:gap-2">
             <li className="">
               <MdInsights size={40} className="md:size-12" />
-              <h4>P E R F O R M A N C E</h4>
+              <h4>{t("score.performance")}</h4>
               <span>{data.performanceScore}/100</span>
             </li>
             <li className="">
               <MdInsights size={40} className="md:size-12" />
-              <h4>S E O</h4>
+              <h4>{t("score.seo")}</h4>
               <span>{data.seoScore}/100</span>
             </li>
             <li>
               <MdInsights size={40} className="md:size-12" />
-              <h4>A C C E S S I B I L I T Y</h4>
+              <h4>{t("score.accessibility")}</h4>
               <span>{data.accessibilityScore}/100</span>
             </li>
           </ul>
@@ -144,7 +146,7 @@ export default async function ProjectDetailPage({
       <div className="bg-bg-400 -mx-5 -mb-5 md:-mb-10 lg:-mb-14 lg:mx-[calc((100vw-1260px)/-2)]">
         <div className="max-w-310 mx-auto py-10 px-5 ">
           <h4 className="text-18-semibold md:text-20-semibold text-center mb-8 md:mb-10 ">
-            C O L L A B O R A T O R S
+            {t("collaborators")}
           </h4>
           <ul className="grid grid-cols-1 gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3 ">
             {Object.values(data.participants)
@@ -164,6 +166,7 @@ export default async function ProjectDetailPage({
                       alt="collaborator"
                       width={96}
                       height={96}
+                      unoptimized
                       className="absolute top-1/2 -translate-y-1/2"
                     />
                     <div className="ml-12 bg-bg-300 h-32 pl-17 pt-3 flex flex-col">
