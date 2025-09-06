@@ -1,6 +1,6 @@
 import { ProjectPayload } from "@/types";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import badge from "@/assets/images/badge.svg";
 import { MdInsights } from "react-icons/md";
 import { getTranslations } from "next-intl/server";
