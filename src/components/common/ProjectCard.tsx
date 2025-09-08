@@ -1,5 +1,5 @@
 import { ProjectPayload } from "@/types";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, getLocale } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
 import { FaArrowRightLong } from "react-icons/fa6";
@@ -12,10 +12,11 @@ export default async function ProjectCard({
   currentTab: string;
 }) {
   const t = await getTranslations("ProjectsPage");
+  const locale = (await getLocale()) as "en" | "ko";
   return (
     <Link
       href={`/projects/${data.id}?tab=${currentTab}`}
-      className="block group "
+      className="group flex flex-col  justify-center"
     >
       <div className="relative w-fit">
         <Image
@@ -41,8 +42,8 @@ export default async function ProjectCard({
         </div>
       </div>
 
-      <h4 className="pt-2 md:pt-3 text-14-semibold md:text-16-semibold uppercase">
-        {data.title} - {data.tagline}
+      <h4 className="max-w-92.5 pt-2 md:pt-3 text-14-semibold  md:text-16-semibold  line-clamp-2">
+        {data.title[locale]} - {data.tagline[locale]}
       </h4>
     </Link>
   );

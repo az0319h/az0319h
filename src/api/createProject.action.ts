@@ -19,11 +19,33 @@ export async function createProject(
     const id = crypto.randomUUID();
     const createdAt = new Date().toISOString();
 
-    // 기본 필드
-    const title = String(formData.get("title") || "").trim();
-    const tagline = String(formData.get("tagline") || "").trim();
-    const platform = String(formData.get("platform") || "").trim();
-    const description = String(formData.get("description") || "").trim();
+    // 다국어 필드
+    const title = {
+      en: String(formData.get("title_en") || "").trim(),
+      ko: String(formData.get("title_ko") || "").trim(),
+    };
+
+    const tagline = {
+      en: String(formData.get("tagline_en") || "").trim(),
+      ko: String(formData.get("tagline_ko") || "").trim(),
+    };
+
+    const platform = {
+      en: String(formData.get("platform_en") || "").trim(),
+      ko: String(formData.get("platform_ko") || "").trim(),
+    };
+
+    const description = {
+      en: String(formData.get("description_en") || "").trim(),
+      ko: String(formData.get("description_ko") || "").trim(),
+    };
+
+    const category = {
+      en: String(formData.get("category_en") || "").trim(),
+      ko: String(formData.get("category_ko") || "").trim(),
+    };
+
+    // 단일 필드
     const projectUrl = String(formData.get("projectUrl") || "").trim();
     const projectGitHubUrl = String(
       formData.get("projectGitHubUrl") || ""
@@ -31,8 +53,6 @@ export async function createProject(
     const projectImageUrl = String(
       formData.get("projectImageUrl") || ""
     ).trim();
-
-    const category = String(formData.get("category") || "").trim();
 
     // 태그
     const tagsRaw = String(formData.get("tags") || "");
@@ -78,10 +98,11 @@ export async function createProject(
     const payload: ProjectPayload = {
       id,
       createdAt,
-      title,
-      tagline,
-      platform,
-      description,
+      title, // { en, ko }
+      tagline, // { en, ko }
+      platform, // { en, ko }
+      description, // { en, ko }
+      category, // { en, ko }
       projectUrl,
       projectImageUrl,
       projectGitHubUrl,
@@ -89,7 +110,6 @@ export async function createProject(
       accessibilityScore,
       seoScore,
       overallScore,
-      category,
       tags,
       participants,
     };

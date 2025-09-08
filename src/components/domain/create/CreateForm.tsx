@@ -102,9 +102,31 @@ export default function CreateProjectForm() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
             <label className="block">
-              <span>PROJECT NAME</span>
+              <label className="block">
+                <span>PROJECT NAME (EN)</span>
+                <input
+                  name="title_en"
+                  type="text"
+                  required
+                  className="w-full border  border-line-100 rounded px-3 py-2"
+                />
+              </label>
+            </label>
+
+            <label className="block">
+              <span>PROJECT NAME (KO)</span>
               <input
-                name="title"
+                name="title_ko"
+                type="text"
+                required
+                className="w-full border  border-line-100 rounded px-3 py-2"
+              />
+            </label>
+
+            <label className="block">
+              <span>TAGLINE (EN)</span>
+              <input
+                name="tagline_en"
                 type="text"
                 required
                 className="w-full border border-line-100 rounded px-3 py-2"
@@ -112,9 +134,19 @@ export default function CreateProjectForm() {
             </label>
 
             <label className="block">
-              <span>TAGLINE</span>
+              <span>TAGLINE (KO)</span>
               <input
-                name="tagline"
+                name="tagline_ko"
+                type="text"
+                required
+                className="w-full border border-line-100 rounded px-3 py-2"
+              />
+            </label>
+
+            <label className="block ">
+              <span>PLATFORM (EN)</span>
+              <input
+                name="platform_en"
                 type="text"
                 required
                 className="w-full border border-line-100 rounded px-3 py-2"
@@ -122,31 +154,52 @@ export default function CreateProjectForm() {
             </label>
 
             <label className="block">
-              <span>PLATFORM</span>
+              <span>PLATFORM (KO)</span>
               <input
-                name="platform"
+                name="platform_ko"
                 type="text"
                 required
                 className="w-full border border-line-100 rounded px-3 py-2"
               />
             </label>
 
-            <label className="block">
-              <span>CATEGORY</span>
+            <label className="block ">
+              <span>CATEGORY (EN)</span>
               <input
-                name="category"
+                name="category_en"
                 type="text"
                 required
                 className="w-full border border-line-100 rounded px-3 py-2"
                 placeholder="E.G., SERVICE, TRAVEL, OTHERS"
               />
             </label>
+
+            <label className="block ">
+              <span>CATEGORY (KO)</span>
+              <input
+                name="category_ko"
+                type="text"
+                required
+                className="w-full border border-line-100 rounded px-3 py-2"
+                placeholder="예: 서비스, 여행, 기타"
+              />
+            </label>
           </div>
 
+          {/* DESCRIPTION */}
           <label className="block mt-4">
-            <span>DESCRIPTION</span>
+            <span>DESCRIPTION (EN)</span>
             <textarea
-              name="description"
+              name="description_en"
+              rows={3}
+              className="text-14-regular md:text-16-regular w-full border border-line-100 rounded px-3 py-2"
+            />
+          </label>
+
+          <label className="block mt-4">
+            <span>DESCRIPTION (KO)</span>
+            <textarea
+              name="description_ko"
               rows={3}
               className="text-14-regular md:text-16-regular w-full border border-line-100 rounded px-3 py-2"
             />
