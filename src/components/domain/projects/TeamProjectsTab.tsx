@@ -11,7 +11,7 @@ export default async function TeamProjectsTab() {
           N O&nbsp;&nbsp;&nbsp;P R O J E C T S&nbsp;&nbsp;&nbsp;F O U N D . . .
         </div>
       ) : (
-        <div className="grid  grid-cols-1 gap-14 md:grid-cols-2 justify-items-center lg:grid-cols-3 lg:gap-y-25">
+        <div className="grid  grid-cols-1 gap-14 md:grid-cols-2 md:items-start justify-items-center lg:grid-cols-3 lg:gap-y-25">
           {datas.map((data) => (
             <ProjectCard key={data.id} data={data} currentTab="2" />
           ))}
