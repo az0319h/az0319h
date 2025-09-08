@@ -3,11 +3,11 @@ import Image from "next/image";
 import { Link } from "@/i18n/routing";
 import badge from "@/assets/images/badge.svg";
 import { MdInsights } from "react-icons/md";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, getLocale } from "next-intl/server";
 
 export default async function HeroBanner({ data }: { data: ProjectPayload }) {
   const t = await getTranslations("HomePage");
-
+  const locale = (await getLocale()) as "en" | "ko";
   // participants가 배열이면 그대로, 객체면 Object.values로 배열화, 없으면 빈 배열
   const participants = Array.isArray(data.participants)
     ? data.participants
@@ -40,15 +40,15 @@ export default async function HeroBanner({ data }: { data: ProjectPayload }) {
             />
             <div className="flex flex-col items-center md:items-start ">
               <h3 className="text-18-bold mb-2 lg:text-20-bold">
-                {data.title}
+                {data.title[locale]}
               </h3>
               <h4 className="text-14-regular lg:text-16-regular">
-                {data.tagline}
+                {data.tagline[locale]}
               </h4>
               <span className="text-14-regular lg:text-16-regular">-</span>
               <span className="text-14-regular lg:text-16-regular">
                 {" "}
-                {data.platform}
+                {data.platform[locale]}
               </span>
             </div>
           </div>
@@ -56,7 +56,7 @@ export default async function HeroBanner({ data }: { data: ProjectPayload }) {
           <div className="px-10 md:px-0 md:flex items-center justify-center md:w-50 lg:w-70">
             <p className="text-center md:text-left">
               <em className="text-12-regular lg:text-14-regular ">
-                {data.description}
+                {data.description[locale]}
               </em>
             </p>
           </div>

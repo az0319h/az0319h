@@ -1,7 +1,7 @@
 import { readAdjacentProjects } from "@/api/readAdjacentProjects.action";
 import { readProjectById } from "@/api/readProject.action";
 import Shortcut from "@/components/domain/projects/Shortcut";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, getLocale } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -21,6 +21,7 @@ export default async function ProjectDetailPage({
   searchParams: Promise<{ tab?: string }>;
 }) {
   const t = await getTranslations("ProjectsPage.detail");
+  const locale = (await getLocale()) as "en" | "ko";
   const { id } = await params;
   const { tab } = await searchParams;
   const currentTab = (tab as "1" | "2" | "3") ?? "1";
@@ -76,9 +77,11 @@ export default async function ProjectDetailPage({
       <div className="max-w-185 mx-auto">
         <div className="flex  items-center justify-center  flex-col md:flex-row md:justify-between  md:items-center  mb-7">
           <div className="text-center md:text-left">
-            <h2 className="text-22-bold md:text-24-bold mb-2">{data.title}</h2>
+            <h2 className="text-22-bold md:text-24-bold mb-2">
+              {data.title[locale]}
+            </h2>
             <h3 className="text-14-regular md:text-18-regular">
-              {data.tagline} | {data.platform}
+              {data.tagline[locale]} | {data.platform[locale]}
             </h3>
           </div>
           <div className="pt-6">
@@ -101,7 +104,7 @@ export default async function ProjectDetailPage({
           <div>
             <h4 className="text-center md:text-left ">
               <span className="text-12-bold">{t("labels.about")}: </span>
-              <em className="text-12-regular">{data.description}</em>
+              <em className="text-12-regular">{data.description[locale]}</em>
             </h4>
           </div>
           <div className="md:flex md:flex-col-reverse md:justify-between md:min-w-4/10">
@@ -116,7 +119,7 @@ export default async function ProjectDetailPage({
             </h4>
             <h4 className="text-center md:text-left">
               <span className="text-12-bold">{t("labels.category")}: </span>
-              <span className="text-12-regular">{data.category}</span>
+              <span className="text-12-regular">{data.category[locale]}</span>
             </h4>
           </div>
         </div>
