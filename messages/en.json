@@ -1,7 +1,8 @@
 {
   "HomePage": {
     "title": "M Y\u00A0\u00A0\u00A0L A T E S T\u00A0\u00A0\u00A0P R O J E C T\u00A0\u00A0\u00A02 0 2 5",
-    "appLink": "N E W E S T\u00A0\u00A0\u00A0P R O J E C T S",
+    "teamProjectLink": "T E A M\u00A0\u00A0\u00A0P R O J E C T S",
+    "personalProjectLink": "P E R S O N A L\u00A0\u00A0\u00A0P R O J E C T S",
     "more": "M\u00A0\u00A0O\u00A0\u00A0R\u00A0\u00A0\u00A0E",
     "ScoreSection": {
       "performance": "P E R F O R M A N C E",

@@ -1,8 +1,9 @@
 {
   "HomePage": {
     "title": "2 0 2 5 년\u00A0\u00A0\u00A0나 의\u00A0\u00A0\u00A0최 신\u00A0\u00A0\u00A0작 업 물",
-    "appLink": "최 신\u00A0\u00A0\u00A0프 로 젝 트",
-    "more": "프 로 젝 트\u00A0\u00A0\u00A0더 보 기",
+    "teamProjectLink": "팀\u00A0\u00A0\u00A0프 로 젝 트",
+    "personalProjectLink": "개 인\u00A0\u00A0\u00A0프 로 젝 트",
+    "more": "전 체\u00A0\u00A0\u00A0프 로 젝 트",
     "ScoreSection": {
       "performance": "성 능",
       "seo": "검 색 엔 진 최 적 화",
@@ -18,7 +19,7 @@
   },
   "ProjectsPage": {
     "tabs": {
-      "all": "모 든\u00A0\u00A0\u00A0프 로 젝 트",
+      "all": "전 체\u00A0\u00A0\u00A0프 로 젝 트",
       "team": "팀\u00A0\u00A0\u00A0프 로 젝 트",
       "personal": "개 인\u00A0\u00A0\u00A0프 로 젝 트"
     },
