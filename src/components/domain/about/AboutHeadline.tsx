@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import Lottie from "lottie-react";
 import scrollAnimation from "@/assets/lotties/scroll.json";
 import aboutIcon from "@/assets/images/about.svg";
-import profileImage from "@/assets/images/profile.png";
 import Image from "next/image";
 import { toggleBodyScroll } from "@/utils";
 import { useTranslations } from "next-intl";

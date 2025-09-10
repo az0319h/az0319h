@@ -26,8 +26,8 @@ export function NotificationProvider({ children }: { children: ReactNode }) {
   const showNotification = (message: string, success: boolean) => {
     setNotification({ message, success });
 
-    // 5초 뒤 자동 닫기
-    setTimeout(() => setNotification(null), 5000);
+    // 7초 뒤 자동 닫기
+    setTimeout(() => setNotification(null), 7000);
   };
 
   return (

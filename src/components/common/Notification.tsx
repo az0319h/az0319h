@@ -28,10 +28,8 @@ export default function Notification({
       className={`
             flex items-center gap-4
             ${success ? "bg-black-100" : "bg-red-500"}
-            max-w-92 min-h-16 w-9/10 fixed bottom-5 
-            left-1/2 -translate-x-1/2
-            md:left-auto md:translate-x-0
-            md:bottom-9 md:right-5
+            max-w-97 min-h-16 w-9/10 fixed bottom-5 right-5 
+            md:bottom-9 
             px-4 py-3 rounded-sm shadow text-white z-40
           `}
     >
