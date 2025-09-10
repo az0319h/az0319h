@@ -32,18 +32,18 @@ export default function AboutHeadline() {
     // 2. 텍스트 애니메이션 완료 후 Lottie 표시
     const lottieTimer = setTimeout(() => {
       setShowLottie(true);
+      setIntroDone(true);
     }, totalDuration + 500);
 
-    // 3. 텍스트 애니메이션 완료 후 프로필 이미지 표시
-    const profileTimer = setTimeout(() => {
-      setShowProfile(true);
-      setIntroDone(true);
-    }, totalDuration + 700);
+    // // 3. 텍스트 애니메이션 완료 후 프로필 이미지 표시
+    // const profileTimer = setTimeout(() => {
+    //   setShowProfile(true);
+    // }, totalDuration + 700);
 
     return () => {
       clearTimeout(textTimer);
       clearTimeout(lottieTimer);
-      clearTimeout(profileTimer);
+      // clearTimeout(profileTimer);
     };
   }, [totalDuration]);
 
@@ -155,7 +155,7 @@ export default function AboutHeadline() {
           />
         </div>
       </div>
-      {/* 프로필 이미지 (scrollY===0일 때만 보임) */}
+      {/* 프로필 이미지 (scrollY===0일 때만 보임)
       <div
         className={`absolute right-0 bottom-0 transition-opacity duration-700 ${
           showProfile ? "opacity-100" : "opacity-0"
@@ -168,7 +168,7 @@ export default function AboutHeadline() {
           className="sm:size-40 md:size-70 lg:size-90"
           unoptimized
         />
-      </div>
+      </div> */}
     </div>
   );
 }
