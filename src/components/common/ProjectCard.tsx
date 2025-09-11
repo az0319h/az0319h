@@ -1,7 +1,7 @@
 import { ProjectPayload } from "@/types";
 import { getTranslations, getLocale } from "next-intl/server";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { FaArrowRightLong } from "react-icons/fa6";
 
 export default async function ProjectCard({
