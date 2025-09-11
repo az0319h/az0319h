@@ -9,7 +9,7 @@ import { UserProvider } from "@/context/UserContext";
 import { NotificationProvider } from "@/context/NotificationContext";
 import { routing } from "@/i18n/routing";
 import { notFound } from "next/navigation";
-import { getMessages } from "next-intl/server";
+import { getMessages, getTranslations } from "next-intl/server";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 
 const poppins = Poppins({
@@ -22,37 +22,36 @@ const spaceGrotesk = Space_Grotesk({
   weight: ["400", "500", "600", "700"],
 });
 
-export const metadata: Metadata = {
-  title: "Hong Sunghoon - Web Developer Portfolio",
-  description:
-    "A personal portfolio website designed to introduce myself and showcase my projects and experiences at a glance. It organizes my background, skills, and work to help visitors easily understand my capabilities.",
-  icons: {
-    icon: "/favicon.ico",
-  },
-  openGraph: {
-    title: "Hong Sunghoon - Web Developer Portfolio",
-    description:
-      "Personal portfolio website showcasing my profile, projects, and experiences in one place.",
-    url: "https://madebyhshfolio.site/",
-    siteName: "Hong Sunghoon Portfolio",
-    images: [
-      {
-        url: "/seo.png",
-        width: 1200,
-        height: 630,
-        alt: "Site Preview Image",
-      },
-    ],
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Hong Sunghoon - Web Developer Portfolio",
-    description:
-      "Personal portfolio website showcasing my profile, projects, and experiences in one place.",
-    images: ["/seo.png"],
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const t = await getTranslations("HomeMetaData");
+  return {
+    title: t("title"),
+    description: t("description"),
+    icons: {
+      icon: "/favicon.ico",
+    },
+    openGraph: {
+      title: t("openGraph.title"),
+      description: t("openGraph.description"),
+      url: t("openGraph.url"),
+      siteName: t("openGraph.siteName"),
+      images: [
+        {
+          url: "/seo.png",
+          width: 1200,
+          height: 630,
+          alt: t("openGraph.imageAlt"),
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: t("twitter.title"),
+      description: t("twitter.description"),
+      images: ["/seo.png"],
+    },
+  };
+}
 
 export default async function RootLayout({
   children,

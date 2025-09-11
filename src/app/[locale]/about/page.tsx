@@ -5,6 +5,9 @@ import AboutInterview from "@/components/domain/about/AboutInterview";
 import AboutMyExperience from "@/components/domain/about/AboutMyExperience";
 import AboutTechStack from "@/components/domain/about/AboutTechStack";
 
+
+
+
 export default function AboutPage() {
   return (
     <div className="pb-10 sm:pb-20">
