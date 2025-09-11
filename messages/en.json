@@ -1,4 +1,40 @@
 {
+  "HomeMetaData": {
+    "title": "Hong Sunghoon - Web Developer Portfolio",
+    "description": "A personal portfolio website designed to introduce myself and showcase my projects and experiences at a glance. It organizes my background, skills, and work to help visitors easily understand my capabilities.",
+    "openGraph": {
+      "title": "Hong Sunghoon - Web Developer Portfolio",
+      "description": "Personal portfolio website showcasing my profile, projects, and experiences in one place.",
+      "url": "https://madebyhshfolio.site/en",
+      "siteName": "Hong Sunghoon Portfolio",
+      "imageAlt": "Site Preview Image"
+    },
+    "twitter": {
+      "title": "Hong Sunghoon - Web Developer Portfolio",
+      "description": "Personal portfolio website showcasing my profile, projects, and experiences in one place.",
+      "imageAlt": "Site Preview Image"
+    }
+  },
+  "AboutMetaData": {
+    "title": "About - Hong Sunghoon Portfolio",
+    "description": "Learn more about Hong Sunghoon: background, experiences, and core beliefs as a web developer.",
+    "openGraph": {
+      "title": "About - Hong Sunghoon Portfolio",
+      "description": "Discover Hong Sunghoon’s journey, skills, and philosophy as a web developer.",
+      "url": "https://madebyhshfolio.site/en/about",
+      "siteName": "Hong Sunghoon Portfolio",
+      "imageAlt": "About Page Preview"
+    },
+    "twitter": {
+      "title": "About - Hong Sunghoon Portfolio",
+      "description": "Discover Hong Sunghoon’s journey, skills, and philosophy as a web developer.",
+      "imageAlt": "About Page Preview"
+    }
+  },
+  "ProjectDetailMetaData": {
+    "siteName": "Hong Sunghoon Portfolio",
+    "imageAlt": "Project Preview Image"
+  },
   "HomePage": {
     "title": "M Y\u00A0\u00A0\u00A0L A T E S T\u00A0\u00A0\u00A0P R O J E C T\u00A0\u00A0\u00A02 0 2 5",
     "teamProjectLink": "T E A M\u00A0\u00A0\u00A0P R O J E C T S",

@@ -1,6 +1,7 @@
 import { readAdjacentProjects } from "@/api/readAdjacentProjects.action";
 import { readProjectById } from "@/api/readProject.action";
 import Shortcut from "@/components/domain/projects/Shortcut";
+import { Metadata } from "next";
 import { getTranslations, getLocale } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,6 +13,56 @@ const positionOrder: Record<string, number> = {
   "Sub Leader": 1,
   "Team Member": 2,
 };
+
+export async function generateMetadata({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ id: string; locale: string }>;
+  searchParams: Promise<{ tab?: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const { tab } = await searchParams;
+  const locale = (await getLocale()) as "en" | "ko";
+  const t = await getTranslations("ProjectDetailMetaData");
+
+  const data = await readProjectById(id);
+
+  if (!data) notFound();
+
+  const baseUrl = "https://madebyhshfolio.site";
+  const currentUrl = `${baseUrl}/${locale}/projects/${id}${
+    tab ? `?tab=${tab}` : "?tab=1"
+  }`;
+
+  return {
+    title: `${data.title[locale]} - ${data.tagline[locale]}`,
+    description: `${data.description[locale]}`,
+    icons: {
+      icon: "/favicon.ico",
+    },
+    openGraph: {
+      title: `${data.title[locale]} - ${data.tagline[locale]}`,
+      description: `${data.description[locale]}`,
+      url: currentUrl,
+      siteName: t("siteName"),
+      images: [
+        {
+          url: `${data.projectImageUrl}`,
+          width: 1200,
+          height: 630,
+          alt: t("imageAlt"),
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${data.title[locale]} - ${data.tagline[locale]}`,
+      description: `${data.description[locale]}`,
+      images: `${data.projectImageUrl}`,
+    },
+  };
+}
 
 export default async function ProjectDetailPage({
   params,
