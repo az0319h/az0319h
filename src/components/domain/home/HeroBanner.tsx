@@ -42,7 +42,7 @@ export default async function HeroBanner({ data }: { data: ProjectPayload }) {
               <h3 className="text-18-bold mb-2 lg:text-20-bold">
                 {data.title[locale]}
               </h3>
-              <h4 className="text-14-regular lg:text-16-regular">
+              <h4 className="text-center text-14-regular lg:text-16-regular">
                 {data.tagline[locale]}
               </h4>
               <span className="text-14-regular lg:text-16-regular">-</span>
