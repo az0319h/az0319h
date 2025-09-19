@@ -337,6 +337,7 @@ html,
 body {
   background-color: var(--color-bg-100);
   color: var(--color-black-100);
+  word-break: break-keep;
 }
 
 button,
