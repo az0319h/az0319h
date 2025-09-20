@@ -15,21 +15,23 @@ export default async function HeroBanner({ data }: { data: ProjectPayload }) {
 
   return (
     <div className="relative ">
-      <div className="">
+      <div>
         <Link
           href={`/projects/${data.id}`}
-          className="inline-block w-fit md:block md:mx-auto "
+          className="relative inline-block w-fit md:block md:mx-auto group shadow-image"
         >
           <Image
             src={data.projectImageUrl}
             alt="projectImageUrl"
             width={765}
             height={0}
-            className="lg:w-250 cursor-pointer shadow-image transition-transform duration-300 ease-in-out hover:scale-101"
+            className="block lg:w-250 cursor-pointer "
             unoptimized
           />
-        </Link>
 
+          {/* 오버레이 */}
+          <div className="absolute inset-0 bg-black/20 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100" />
+        </Link>
         <div className="md:flex md:w-180  md:mx-auto py-7 md:py-10 justify-between lg:w-230 ">
           <div className="mb-5 md:mb-0 md:flex md:items-center md:gap-5 ">
             <Image
