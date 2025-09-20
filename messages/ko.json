@@ -60,6 +60,7 @@
       "personal": "개 인\u00A0\u00A0\u00A0프 로 젝 트"
     },
     "viewProject": "프 로 젝 트\u00A0\u00A0\u00A0상 세 보 기",
+    "updatedText": "본질을\u00A0\u00A0\u00A0이어가다\u00A0\u00A0\u00A0·\u00A0\u00A0\u00A02025",
     "viewOnGithub": "GitHub 바로가기",
     "detail": {
       "prev": "이 전",
@@ -67,9 +68,7 @@
       "labels": {
         "about": "프로젝트  소개",
         "techStack": "기술 스택",
-        "category": "카테고리",
-        "link": "웹 사 이 트\u00A0\u00A0\u00A0바 로 가 기",
-        "updatedText": "본질을\u00A0\u00A0\u00A0이어가다\u00A0\u00A0\u00A0·\u00A0\u00A0\u00A02025"
+        "category": "카테고리"
       },
       "lighthouseTitle": "라 이 트 하 우 스\u00A0\u00A0\u00A0점 수",
       "score": {

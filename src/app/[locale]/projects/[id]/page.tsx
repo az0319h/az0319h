@@ -100,13 +100,23 @@ export default async function ProjectDetailPage({
               priority
               className="transform -translate-x-5 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"
             />
-            <span className="absolute left-1/2 top-1/2 -translate-1/2 text-white text-14-medium  opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+
+            {/* hover 시 배경 오버레이 */}
+            <div
+              className="absolute inset-0 bg-black/50 opacity-0 
+                   transform -translate-x-5 group-hover:translate-x-0 
+                   group-hover:opacity-100 
+                   transition-all duration-300 ease-in-out"
+            />
+
+            <span className="absolute left-1/2 top-1/2 -translate-1/2 text-white text-14-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               {t("prev")}
             </span>
           </Link>
         )}
       </div>
-      <div className="hidden w-40 lg:block lg:fixed top-1/2 -translate-y-1/2 right-0  z-30">
+
+      <div className="hidden w-40 lg:block lg:fixed top-1/2 -translate-y-1/2 right-0 z-30">
         {adjacent.next && (
           <Link
             href={`/projects/${adjacent.next.id}?tab=${currentTab}`}
@@ -121,12 +131,22 @@ export default async function ProjectDetailPage({
               priority
               className="transform translate-x-5 group-hover:translate-x-0 transition-transform duration-300 ease-in-out"
             />
-            <span className="absolute left-1/2 top-1/2 -translate-1/2 text-white text-14-medium  opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+
+            {/* hover 시 배경 오버레이 */}
+            <div
+              className="absolute inset-0 bg-black/50 opacity-0 
+                   transform translate-x-5 group-hover:translate-x-0 
+                   group-hover:opacity-100 
+                   transition-all duration-300 ease-in-out"
+            />
+
+            <span className="absolute left-1/2 top-1/2 -translate-1/2 text-white text-14-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               {t("next")}
             </span>
           </Link>
         )}
       </div>
+
       <div className="max-w-185 mx-auto">
         <div className="flex  items-center justify-center  flex-col md:flex-row md:justify-between  md:items-center  mb-7">
           <div className="text-center md:text-left">
@@ -145,7 +165,7 @@ export default async function ProjectDetailPage({
           <Link
             href={data.projectUrl}
             target="_blank"
-            className="relative inline-block w-fit group shadow-image"
+            className="relative inline-block w-fit group "
           >
             <Image
               src={data.projectImageUrl}
@@ -156,7 +176,7 @@ export default async function ProjectDetailPage({
               unoptimized
             />
 
-            {/* 오버레이 */}
+            {/* 오버레이
             <div className="text-gray-200 absolute inset-0 bg-black/50 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
               <div className="absolute right-5 top-5 md:top-7 md:right-7">
                 <Image
@@ -175,7 +195,7 @@ export default async function ProjectDetailPage({
               <div className="absolute left-5 top-5 md:top-7 md:left-7 text-12-medium md:text-14-medium">
                 {t("labels.updatedText")}
               </div>
-            </div>
+            </div> */}
           </Link>
         </div>
         <div className="flex flex-col gap-7 md:gap-10 px-7 mb-10 md:mb-15 md:flex-row">

@@ -1,22 +1,25 @@
+"use client";
 import { ProjectPayload } from "@/types";
-import { getTranslations, getLocale } from "next-intl/server";
 import Image from "next/image";
-import { Link } from "@/i18n/routing";
+import { useRouter } from "@/i18n/routing";
 import { FaArrowRightLong } from "react-icons/fa6";
+import linkIcon from "@/assets/images/link.svg";
+import { useLocale, useTranslations } from "next-intl";
 
-export default async function ProjectCard({
+export default function ProjectCard({
   data,
   currentTab,
 }: {
   data: ProjectPayload;
   currentTab: string;
 }) {
-  const t = await getTranslations("ProjectsPage");
-  const locale = (await getLocale()) as "en" | "ko";
+  const t = useTranslations("ProjectsPage");
+  const locale = useLocale() as "en" | "ko";
+  const router = useRouter();
   return (
-    <Link
-      href={`/projects/${data.id}?tab=${currentTab}`}
-      className="group flex flex-col  justify-center"
+    <div
+      onClick={() => router.push(`/projects/${data.id}?tab=${currentTab}`)}
+      className="group flex flex-col z-30 justify-center cursor-pointer"
     >
       <div className="relative w-fit">
         <Image
@@ -35,9 +38,28 @@ export default async function ProjectCard({
             flex justify-center items-center
           "
         >
-          <div className="flex items-center gap-2 text-14-semibold">
-            <h4>{t("viewProject")}</h4>
-            <FaArrowRightLong />
+          <div className="text-gray-200 absolute inset-0 bg-black/50 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
+            <div className="absolute right-5 top-5 md:top-7 md:right-7 z-40">
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  window.open(data.projectUrl, "_blank", "noopener,noreferrer");
+                }}
+                className="hover:opacity-80 transition-opacity duration-300"
+              >
+                <Image src={linkIcon} alt="link" width={18} />
+              </button>
+            </div>
+            <div className="absolute left-1/2 top-1/2 -translate-1/2">
+              <div className=" flex items-center gap-2 text-16-semibold">
+                <h4>{t("viewProject")}</h4>
+                <FaArrowRightLong />
+              </div>
+            </div>
+            <div className="absolute left-5 top-5 md:top-7 md:left-7 text-12-medium ">
+              {t("updatedText")}
+            </div>
           </div>
         </div>
       </div>
@@ -45,6 +67,6 @@ export default async function ProjectCard({
       <h4 className="max-w-92.5 pt-2 md:pt-3 text-14-semibold  md:text-16-semibold  line-clamp-2">
         {data.title[locale]} - {data.tagline[locale]}
       </h4>
-    </Link>
+    </div>
   );
 }
