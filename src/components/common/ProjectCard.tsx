@@ -29,7 +29,7 @@ export default async function ProjectCard({
         />
         <div
           className="
-            absolute inset-0 bg-black/70 opacity-0
+            absolute inset-0 bg-black/50 opacity-0
             transition-opacity duration-300
             group-hover:opacity-100 text-gray-100
             flex justify-center items-center

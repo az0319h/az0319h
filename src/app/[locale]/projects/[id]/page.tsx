@@ -157,7 +157,7 @@ export default async function ProjectDetailPage({
             />
 
             {/* 오버레이 */}
-            <div className="text-gray-200 absolute inset-0 bg-black/70 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
+            <div className="text-gray-200 absolute inset-0 bg-black/50 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
               <div className="absolute right-5 top-5 md:top-7 md:right-7">
                 <Image
                   src={linkIcon}
