@@ -140,15 +140,22 @@ export default async function ProjectDetailPage({
           </div>
         </div>
         <div className="mb-7 md:mb-10">
-          <Link href={data.projectUrl} target="_blank">
+          <Link
+            href={data.projectUrl}
+            target="_blank"
+            className="relative inline-block w-fit group shadow-image"
+          >
             <Image
               src={data.projectImageUrl}
               alt="projectImageUrl"
               width={740}
               height={0}
-              className="cursor-pointer shadow-image transition-all duration-300 ease-in-out hover:scale-101"
+              className="block cursor-pointer"
               unoptimized
             />
+
+            {/* 오버레이 */}
+            <div className="absolute inset-0 bg-black/20 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100" />
           </Link>
         </div>
         <div className="flex flex-col gap-7 md:gap-10 px-7 mb-10 md:mb-15 md:flex-row">
