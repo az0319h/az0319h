@@ -67,7 +67,9 @@
       "labels": {
         "about": "프로젝트  소개",
         "techStack": "기술 스택",
-        "category": "카테고리"
+        "category": "카테고리",
+        "link": "웹 사 이 트\u00A0\u00A0\u00A0바 로 가 기",
+        "updatedText": "본질을\u00A0\u00A0\u00A0이어가다\u00A0\u00A0\u00A0·\u00A0\u00A0\u00A02025"
       },
       "lighthouseTitle": "라 이 트 하 우 스\u00A0\u00A0\u00A0점 수",
       "score": {

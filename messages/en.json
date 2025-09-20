@@ -67,7 +67,9 @@
       "labels": {
         "about": "ABOUT",
         "techStack": "TECH STACK",
-        "category": "CATEGORY"
+        "category": "CATEGORY",
+        "link": "G O\u00A0\u00A0\u00A0T O\u00A0\u00A0\u00A0W E B S I T E",
+        "updatedText": "UPDATED\u00A0\u00A0\u00A0WITH\u00A0\u00A0\u00A0ESSENCE\u00A0\u00A0\u00A0·\u00A0\u00A0\u00A02025"
       },
       "lighthouseTitle": "L I G H T\u00A0\u00A0\u00A0H O U S E\u00A0\u00A0\u00A0P O I N T",
       "score": {
