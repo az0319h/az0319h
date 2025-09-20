@@ -7,6 +7,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MdInsights } from "react-icons/md";
+import linkIcon from "@/assets/images/link.svg";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 const positionOrder: Record<string, number> = {
   "Team Leader": 0,
@@ -155,7 +157,25 @@ export default async function ProjectDetailPage({
             />
 
             {/* 오버레이 */}
-            <div className="absolute inset-0 bg-black/20 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100" />
+            <div className="text-gray-200 absolute inset-0 bg-black/70 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
+              <div className="absolute right-5 top-5 md:top-7 md:right-7">
+                <Image
+                  src={linkIcon}
+                  alt="link"
+                  width={18}
+                  className="md:size-5"
+                />
+              </div>
+              <div className="absolute left-1/2 top-1/2 -translate-1/2">
+                <div className=" flex items-center gap-2 text-16-semibold md:text-18-semibold">
+                  <h4>{t("labels.link")}</h4>
+                  <FaArrowRightLong />
+                </div>
+              </div>
+              <div className="absolute left-5 top-5 md:top-7 md:left-7 text-12-medium md:text-14-medium">
+                {t("labels.updatedText")}
+              </div>
+            </div>
           </Link>
         </div>
         <div className="flex flex-col gap-7 md:gap-10 px-7 mb-10 md:mb-15 md:flex-row">

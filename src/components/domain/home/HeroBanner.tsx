@@ -30,7 +30,7 @@ export default async function HeroBanner({ data }: { data: ProjectPayload }) {
           />
 
           {/* 오버레이 */}
-          <div className="absolute inset-0 bg-black/20 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100" />
+          <div className="absolute inset-0 bg-black/10 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100" />
         </Link>
         <div className="md:flex md:w-180  md:mx-auto py-7 md:py-10 justify-between lg:w-230 ">
           <div className="mb-5 md:mb-0 md:flex md:items-center md:gap-5 ">
