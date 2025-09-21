@@ -17,7 +17,7 @@ export interface ProjectPayload {
   description: { en: string; ko: string };
   category: { en: string; ko: string };
   projectUrl: string;
-  projectImageUrl: string;
+  projectImageUrls: string[];
   projectGitHubUrl: string;
   performanceScore: number;
   accessibilityScore: number;

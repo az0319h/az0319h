@@ -44,6 +44,14 @@ export async function createProject(
       en: String(formData.get("category_en") || "").trim(),
       ko: String(formData.get("category_ko") || "").trim(),
     };
+    // Project Image URLs (쉼표 구분)
+    const projectImageUrlsRaw = String(
+      formData.get("projectImageUrls") || ""
+    ).trim();
+    const projectImageUrls = projectImageUrlsRaw
+      .split(",")
+      .map((url) => url.trim())
+      .filter((url) => url.length > 0);
 
     // 단일 필드
     const projectUrl = String(formData.get("projectUrl") || "").trim();
@@ -104,7 +112,7 @@ export async function createProject(
       description, // { en, ko }
       category, // { en, ko }
       projectUrl,
-      projectImageUrl,
+      projectImageUrls,
       projectGitHubUrl,
       performanceScore,
       accessibilityScore,

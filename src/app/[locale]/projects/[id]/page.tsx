@@ -7,8 +7,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { MdInsights } from "react-icons/md";
-import linkIcon from "@/assets/images/link.svg";
-import { FaArrowRightLong } from "react-icons/fa6";
 
 const positionOrder: Record<string, number> = {
   "Team Leader": 0,
@@ -50,7 +48,7 @@ export async function generateMetadata({
       siteName: t("siteName"),
       images: [
         {
-          url: `${data.projectImageUrl}`,
+          url: `${data.projectImageUrls[0]}`,
           width: 1200,
           height: 630,
           alt: t("imageAlt"),
@@ -61,7 +59,7 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: `${data.title[locale]} - ${data.tagline[locale]}`,
       description: `${data.description[locale]}`,
-      images: `${data.projectImageUrl}`,
+      images: `${data.projectImageUrls[0]}`,
     },
   };
 }
@@ -92,7 +90,7 @@ export default async function ProjectDetailPage({
             className="group block relative overflow-hidden"
           >
             <Image
-              src={adjacent.prev.projectImageUrl}
+              src={adjacent.prev.projectImageUrls[0]}
               alt="projectImage"
               width={160}
               height={0}
@@ -123,7 +121,7 @@ export default async function ProjectDetailPage({
             className="group block relative overflow-hidden"
           >
             <Image
-              src={adjacent.next.projectImageUrl}
+              src={adjacent.next.projectImageUrls[0]}
               alt="projectImage"
               width={160}
               height={0}
@@ -167,35 +165,17 @@ export default async function ProjectDetailPage({
             target="_blank"
             className="relative inline-block w-fit group "
           >
-            <Image
-              src={data.projectImageUrl}
-              alt="projectImageUrl"
-              width={740}
-              height={0}
-              className="block cursor-pointer"
-              unoptimized
-            />
-
-            {/* 오버레이
-            <div className="text-gray-200 absolute inset-0 bg-black/50 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
-              <div className="absolute right-5 top-5 md:top-7 md:right-7">
-                <Image
-                  src={linkIcon}
-                  alt="link"
-                  width={18}
-                  className="md:size-5"
-                />
-              </div>
-              <div className="absolute left-1/2 top-1/2 -translate-1/2">
-                <div className=" flex items-center gap-2 text-16-semibold md:text-18-semibold">
-                  <h4>{t("labels.link")}</h4>
-                  <FaArrowRightLong />
-                </div>
-              </div>
-              <div className="absolute left-5 top-5 md:top-7 md:left-7 text-12-medium md:text-14-medium">
-                {t("labels.updatedText")}
-              </div>
-            </div> */}
+            {data.projectImageUrls.map((projectImg, index) => (
+              <Image
+                key={index}
+                src={projectImg}
+                alt="projectImageUrl"
+                width={740}
+                height={0}
+                className="block cursor-pointer"
+                unoptimized
+              />
+            ))}
           </Link>
         </div>
         <div className="flex flex-col gap-7 md:gap-10 px-7 mb-10 md:mb-15 md:flex-row">
