@@ -216,15 +216,15 @@ export default function CreateProjectForm() {
           </label>
 
           <label className="block mt-4">
-            <span>PROJECT IMAGE URL</span>
+            <span>PROJECT IMAGE URLS</span>
             <input
-              name="projectImageUrl"
-              type="url"
+              name="projectImageUrls"
+              type="text"
               required
               className="w-full border border-line-100 rounded px-3 py-2"
+              placeholder="https://a.png, https://b.png, https://c.png"
             />
           </label>
-
           <label className="block mt-4">
             <span>PROJECT GITHUB URL</span>
             <input

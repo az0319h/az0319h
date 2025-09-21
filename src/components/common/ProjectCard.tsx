@@ -23,7 +23,7 @@ export default function ProjectCard({
     >
       <div className="relative w-fit">
         <Image
-          src={data.projectImageUrl}
+          src={data.projectImageUrls[0]}
           alt="projectImageUrl"
           width={370}
           height={0}
@@ -53,7 +53,7 @@ export default function ProjectCard({
             </div>
             <div className="absolute left-1/2 top-1/2 -translate-1/2">
               <div className=" flex items-center gap-2 text-16-semibold">
-                <h4>{t("viewProject")}</h4>
+                <h4 className="text-nowrap">{t("viewProject")}</h4>
                 <FaArrowRightLong />
               </div>
             </div>

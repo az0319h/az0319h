@@ -21,7 +21,7 @@ export default async function HeroBanner({ data }: { data: ProjectPayload }) {
           className="relative inline-block w-fit md:block md:mx-auto group shadow-image"
         >
           <Image
-            src={data.projectImageUrl}
+            src={data.projectImageUrls[0]}
             alt="projectImageUrl"
             width={765}
             height={0}
