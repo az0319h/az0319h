@@ -5,6 +5,7 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import logo from "@/assets/images/logo.svg";
 import subLogo from "@/assets/images/subLogo.svg";
+import otherSubLogo from "@/assets/images/otherSubLogo.svg";
 import hamburgerMenu from "@/assets/images/hamburgerMenu.png";
 import AppLink from "@/components/common/AppLink";
 import { toggleBodyScroll } from "@/utils";
@@ -12,10 +13,13 @@ import { Link } from "@/i18n/routing";
 import LocaleSwitcher from "./LocaleSwitcher";
 import { useTranslations } from "next-intl";
 
+const logos = [subLogo, otherSubLogo];
+
 export default function Header() {
   const t = useTranslations("Nav");
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [index, setIndex] = useState(0);
 
   // 스크롤 감지
   useEffect(() => {
@@ -40,6 +44,14 @@ export default function Header() {
     };
   }, [isOpen]);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % logos.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   // 공통 클래스
   const baseClasses = `
     relative py-1 pr-6 w-fit
@@ -62,9 +74,25 @@ export default function Header() {
             MadeBy<span className="font-bold">Hong</span>
           </h2>
         </Link>
-
-        <div className="hidden md:block">
-          <Image src={subLogo} width={100} alt="subLogo" priority />
+        <div className="hidden md:block relative w-[6.25rem] h-[4.6875rem] overflow-hidden">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={index}
+              initial={{ y: -100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 100, opacity: 0 }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              className="absolute inset-0 flex items-center justify-center"
+            >
+              <Image
+                src={logos[index]}
+                width={100}
+                height={100}
+                alt="subLogo"
+                priority
+              />
+            </motion.div>
+          </AnimatePresence>
         </div>
 
         <nav className="flex items-center gap-8">
