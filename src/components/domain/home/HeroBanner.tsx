@@ -1,14 +1,19 @@
+"use client";
+
 import { ProjectPayload } from "@/types";
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
 import badge from "@/assets/images/badge.svg";
 import { MdInsights } from "react-icons/md";
-import { getTranslations, getLocale } from "next-intl/server";
+import { useLocale, useTranslations } from "next-intl";
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
-export default async function HeroBanner({ data }: { data: ProjectPayload }) {
-  const t = await getTranslations("HomePage");
-  const locale = (await getLocale()) as "en" | "ko";
-  // participants가 배열이면 그대로, 객체면 Object.values로 배열화, 없으면 빈 배열
+export default function HeroBanner({ data }: { data: ProjectPayload }) {
+  const t = useTranslations("HomePage");
+  const locale = useLocale() as "en" | "ko";
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
+
   const participants = Array.isArray(data.participants)
     ? data.participants
     : Object.values(data.participants || {});
@@ -77,42 +82,59 @@ export default async function HeroBanner({ data }: { data: ProjectPayload }) {
                       alt={`${participant.name}`}
                       width={40}
                       height={40}
+                      onMouseEnter={() => setHoveredId(participant.id)}
+                      onMouseLeave={() => setHoveredId(null)}
                     />
                   </a>
 
                   {/* 툴팁 */}
-                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-                    <div className="flex flex-col gap-1.5 items-center bg-black-100 text-white  text-14-regular  shadow px-3 py-2 rounded-lg  whitespace-nowrap">
-                      {participant.name}
-                      <span className="text-12-regular">
-                        {participant.role}
-                      </span>
-                      {/* 화살표 */}
-                      <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-black-100"></div>
-                    </div>
-                  </div>
+                  <AnimatePresence>
+                    {hoveredId === participant.id && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -8 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -8 }}
+                        transition={{ duration: 0.2, ease: "easeOut" }}
+                        className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 z-50"
+                      >
+                        <div className="relative flex flex-col gap-1.5 items-center bg-black-100 text-white text-14-regular shadow px-3 py-2 rounded-lg whitespace-nowrap">
+                          {participant.name}
+                          <span className="text-12-regular">
+                            {participant.role}
+                          </span>
+                          {/* 화살표 */}
+                          <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-black-100"></div>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </>
               )}
             </div>
           ))}
         </div>
-        <ul className="pt-6 md:pt-8 grid grid-cols-2 md:grid-cols-4 max-w-191.25 md:mx-auto  gap-y-6 [&_li]:flex  [&_li]:gap-1 [&_li]:flex-col [&_li]:justify-center  [&_li]:items-center [&_li>h4]:text-14-medium [&_li>span]:text-14-semibold">
+        <ul className="[&_div]:flex [&_div]:justify-center [&_div]:items-center [&_div]:size-12 [&_div]:rounded-full [&_div]:border-3 [&_div]:border-black pt-6 md:pt-8 grid grid-cols-2 md:grid-cols-4 max-w-191.25 md:mx-auto  gap-y-6 [&_li]:flex  [&_li]:gap-1.5 [&_li]:flex-col [&_li]:justify-center  [&_li]:items-center [&_li>h4]:text-14-medium [&_li>span]:text-14-semibold">
           <li>
-            <MdInsights size={40} />
+            <div>
+              <MdInsights size={28} />
+            </div>
             <h4>{t("ScoreSection.performance")}</h4>
             <span>{data.performanceScore}/100</span>
           </li>
-          <li className="!gap-0">
-            <MdInsights size={40} />
+          <li>
+            <div>
+              <MdInsights size={28} />
+            </div>
             <h4>{t("ScoreSection.seo")}</h4>
             <span>{data.seoScore}/100</span>
           </li>
           <li>
-            <MdInsights size={40} />
+            <div>
+              <MdInsights size={28} />
+            </div>
             <h4>{t("ScoreSection.accessibility")}</h4>
             <span>{data.accessibilityScore}/100</span>
           </li>
-
           <li>
             <p className="text-20-bold">{data.overallScore}/100</p>
             <h4>{t("ScoreSection.overall")}</h4>

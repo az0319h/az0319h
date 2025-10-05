@@ -8,6 +8,7 @@ import { getTranslations } from "next-intl/server";
 import { readTeamProjects } from "@/api/readTeamProjects.action";
 import { readPersonalProjects } from "@/api/readPersonalProjects.action";
 import { readLatestProject } from "@/api/readLatestProject.action";
+import HeroBannerWide from "@/components/domain/home/HeroBannerWide";
 
 export default async function HomePage() {
   const t = await getTranslations("HomePage");
@@ -22,10 +23,22 @@ export default async function HomePage() {
 
   return (
     <div>
-      <h1 className="text-center mb-3 md:mb-4   text-14-semibold md:text-16-semibold">
+      <h1 className="lg:hidden text-center mb-3 md:mb-4   text-14-semibold md:text-16-semibold">
         {t("title")}
       </h1>
-      {latestProject && <HeroBanner data={latestProject} />}
+      {latestProject && (
+        <>
+          {/* 모바일용 */}
+          <div className="block lg:hidden">
+            <HeroBanner data={latestProject} />
+          </div>
+
+          {/* 데스크톱용 */}
+          <div className="hidden lg:block">
+            <HeroBannerWide data={latestProject} />
+          </div>
+        </>
+      )}
       <div>
         <div className="relative z-10 py-14  md:py-16">
           <AppLink text={t("teamProjectLink")} href="/projects/?tab=2" />
