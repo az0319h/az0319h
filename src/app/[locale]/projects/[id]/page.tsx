@@ -7,6 +7,7 @@ import Image from "next/image";
 import { Link } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 import { MdInsights } from "react-icons/md";
+import lightHouseIcon from "@/assets/images/lighthouse.svg";
 
 const positionOrder: Record<string, number> = {
   "Team Leader": 0,
@@ -207,17 +208,20 @@ export default async function ProjectDetailPage({
           </h5>
           <ul className="flex  justify-center md:gap-12 gap-6 items-center md:[&_span]:text-14-semibold [&_span]:text-12-semibold [&_h4]:text-center  md:[&_h4]:text-14-regular [&_h4]:text-12-regular [&_li]:flex [&_li]:flex-col   [&_li]:items-center [&_li]:gap-0.5 md:[&_li]:gap-2">
             <li className="">
-              <MdInsights size={40} className="md:size-12" />
+              <Image src={lightHouseIcon} alt="lightHouseIcon" width={50} />
+
               <h4>{t("score.performance")}</h4>
               <span>{data.performanceScore}/100</span>
             </li>
             <li className="">
-              <MdInsights size={40} className="md:size-12" />
+              <Image src={lightHouseIcon} alt="lightHouseIcon" width={50} />
+
               <h4>{t("score.seo")}</h4>
               <span>{data.seoScore}/100</span>
             </li>
             <li>
-              <MdInsights size={40} className="md:size-12" />
+              <Image src={lightHouseIcon} alt="lightHouseIcon" width={50} />
+
               <h4>{t("score.accessibility")}</h4>
               <span>{data.accessibilityScore}/100</span>
             </li>

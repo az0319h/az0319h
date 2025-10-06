@@ -8,6 +8,7 @@ import { MdInsights } from "react-icons/md";
 import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import lightHouseIcon from "@/assets/images/lighthouse.svg";
 
 export default function HeroBanner({ data }: { data: ProjectPayload }) {
   const t = useTranslations("HomePage");
@@ -115,23 +116,20 @@ export default function HeroBanner({ data }: { data: ProjectPayload }) {
         </div>
         <ul className="[&_div]:flex [&_div]:justify-center [&_div]:items-center [&_div]:size-12 [&_div]:rounded-full [&_div]:border-3 [&_div]:border-black pt-6 md:pt-8 grid grid-cols-2 md:grid-cols-4 max-w-191.25 md:mx-auto  gap-y-6 [&_li]:flex  [&_li]:gap-1.5 [&_li]:flex-col [&_li]:justify-center  [&_li]:items-center [&_li>h4]:text-14-medium [&_li>span]:text-14-semibold">
           <li>
-            <div>
-              <MdInsights size={28} />
-            </div>
+            <Image src={lightHouseIcon} alt="lightHouseIcon" width={50} />
+
             <h4>{t("ScoreSection.performance")}</h4>
             <span>{data.performanceScore}/100</span>
           </li>
           <li>
-            <div>
-              <MdInsights size={28} />
-            </div>
+            <Image src={lightHouseIcon} alt="lightHouseIcon" width={50} />
+
             <h4>{t("ScoreSection.seo")}</h4>
             <span>{data.seoScore}/100</span>
           </li>
           <li>
-            <div>
-              <MdInsights size={28} />
-            </div>
+            <Image src={lightHouseIcon} alt="lightHouseIcon" width={50} />
+
             <h4>{t("ScoreSection.accessibility")}</h4>
             <span>{data.accessibilityScore}/100</span>
           </li>
