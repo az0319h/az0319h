@@ -4,7 +4,7 @@ import Shortcut from "@/components/domain/projects/Shortcut";
 import { Metadata } from "next";
 import { getTranslations, getLocale } from "next-intl/server";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { notFound } from "next/navigation";
 import { MdInsights } from "react-icons/md";
 
