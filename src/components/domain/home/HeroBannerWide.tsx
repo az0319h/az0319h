@@ -2,7 +2,7 @@
 import { ProjectPayload } from "@/types";
 import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import badge from "@/assets/images/badge.svg";
 import { MdInsights } from "react-icons/md";
 import { AnimatePresence, motion } from "framer-motion";
