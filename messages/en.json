@@ -155,5 +155,9 @@
       "line1": "H I\u00A0\u00A0,\u00A0\u00A0I'M\u00A0\u00A0S U N G H O O N.",
       "line2": "I'M\u00A0\u00A0A\u00A0\u00A0W E B\u00A0\u00A0D E V E L O P E R."
     }
+  },
+  "Sort": {
+    "latest": "L A T E S T",
+    "oldest": "O L D E S T"
   }
 }
