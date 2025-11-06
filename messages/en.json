@@ -51,7 +51,8 @@
     "home": "H O M E",
     "about": "A B O U T",
     "contact": "C O N T A C T",
-    "projects": "P R O J E C T S"
+    "projects": "P R O J E C T S",
+    "cocreators": "C O C R E A T O R S"
   },
   "ProjectsPage": {
     "tabs": {
@@ -155,6 +156,9 @@
       "line1": "H I\u00A0\u00A0,\u00A0\u00A0I'M\u00A0\u00A0S U N G H O O N.",
       "line2": "I'M\u00A0\u00A0A\u00A0\u00A0W E B\u00A0\u00A0D E V E L O P E R."
     }
+  },
+  "CocreatorsPage": {
+    "title": "A L L\u00A0\u00A0\u00A0C O C R E A T O R S"
   },
   "Sort": {
     "latest": "L A T E S T",

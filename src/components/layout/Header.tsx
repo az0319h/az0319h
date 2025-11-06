@@ -156,6 +156,14 @@ export default function Header() {
               >
                 {t("projects")}
               </Link>
+
+              <Link
+                href="/cocreators"
+                className={`${baseClasses}`}
+                onClick={() => setIsOpen(false)}
+              >
+                {t("cocreators")}
+              </Link>
               <LocaleSwitcher onClose={() => setIsOpen(false)} />
             </nav>
           </motion.div>
