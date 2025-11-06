@@ -2,7 +2,7 @@
 
 import { database } from "@/firebase/firebaseConfig";
 import { get, ref } from "firebase/database";
-import { Participant } from "@/types";
+import { Participant, ProjectPayload } from "@/types";
 
 /**
  * 모든 프로젝트를 순회하며 참여자 목록을 가져옴
@@ -14,23 +14,24 @@ export async function readAllCocreators(): Promise<Participant[]> {
 
   if (!snapshot.exists()) return [];
 
-  const projects = snapshot.val();
+  const projects: Record<string, ProjectPayload> = snapshot.val();
   const allParticipants: Record<string, Participant> = {};
 
-  Object.values(projects).forEach((project: any) => {
+  Object.values(projects).forEach((project) => {
     if (!project.participants) return;
 
-    Object.values(project.participants).forEach((p: any) => {
-      const key = p.githubUrl || p.name;
+    Object.values(project.participants).forEach((p) => {
+      const participant = p as Participant;
+      const key = participant.githubUrl || participant.name;
       if (!allParticipants[key]) {
         allParticipants[key] = {
-          id: p.id,
-          name: p.name,
-          githubUrl: p.githubUrl,
-          imageUrl: p.imageUrl,
-          role: p.role,
-          position: p.position,
-          createdAt: p.createdAt,
+          id: participant.id,
+          name: participant.name,
+          githubUrl: participant.githubUrl,
+          imageUrl: participant.imageUrl,
+          role: participant.role,
+          position: participant.position,
+          createdAt: participant.createdAt,
         };
       }
     });
