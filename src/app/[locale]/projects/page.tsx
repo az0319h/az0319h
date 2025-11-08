@@ -12,8 +12,14 @@ export default async function ProjectsPage({
   searchParams: Promise<{ tab?: string; sort?: SortKey }>;
 }) {
   const { tab, sort } = await searchParams;
-  const validSort: SortKey = sort === "oldest" ? "oldest" : "latest";
 
+  // ✅ 네 가지 정렬 옵션 중 하나만 허용
+  const validSort: SortKey =
+    sort === "oldest" || sort === "completed" || sort === "inProgress"
+      ? sort
+      : "latest";
+
+  // tab이 없을 경우 기본값 지정
   if (!tab) redirect(`?tab=1&sort=${validSort}`);
 
   let content: React.ReactNode;

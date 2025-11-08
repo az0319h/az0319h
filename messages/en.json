@@ -129,7 +129,8 @@
     "status": {
       "inProgress": "I N\u00A0\u00A0P R O G R E S S",
       "completed": "C O M P L E T E D"
-    }
+    },
+    "IsProject": "N O\u00A0\u00A0\u00A0P R O J E C T S\u00A0\u00A0\u00A0F O U N D . . ."
   },
   "ContactPage": {
     "title": "Hello. Let’s talk.",
@@ -166,6 +167,8 @@
   },
   "Sort": {
     "latest": "L A T E S T",
-    "oldest": "O L D E S T"
+    "oldest": "O L D E S T",
+    "completed": "C O M P L E T E D",
+    "inProgress": "I N\u00A0\u00A0P R O G R E S S"
   }
 }

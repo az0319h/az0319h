@@ -1,4 +1,4 @@
-export type SortKey = "latest" | "oldest";
+export type SortKey = "latest" | "oldest" | "completed" | "inProgress";
 
 type MaybeDate = string | number | Date;
 
@@ -15,12 +15,26 @@ function toTime(value?: MaybeDate) {
 }
 
 /** createdAt 기준 정렬 (필요 시 updatedAt으로 변경) */
-export function sortProjects<T extends ProjectLike>(items: T[], sort: SortKey): T[] {
+export function sortProjects<T extends ProjectLike & { isCompleted?: boolean }>(
+  items: T[],
+  sort: SortKey
+): T[] {
   const arr = [...items];
-  if (sort === "latest") {
-    arr.sort((a, b) => toTime(b.createdAt) - toTime(a.createdAt));
-  } else {
-    arr.sort((a, b) => toTime(a.createdAt) - toTime(b.createdAt));
+
+  switch (sort) {
+    case "latest":
+      return arr.sort((a, b) => toTime(b.createdAt) - toTime(a.createdAt));
+    case "oldest":
+      return arr.sort((a, b) => toTime(a.createdAt) - toTime(b.createdAt));
+    case "completed":
+      return arr
+        .filter((p) => p.isCompleted)
+        .sort((a, b) => toTime(b.createdAt) - toTime(a.createdAt));
+    case "inProgress":
+      return arr
+        .filter((p) => !p.isCompleted)
+        .sort((a, b) => toTime(b.createdAt) - toTime(a.createdAt));
+    default:
+      return arr;
   }
-  return arr;
 }
