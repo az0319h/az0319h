@@ -1,6 +1,7 @@
 "use client";
 import { usePathname, useRouter } from "@/i18n/routing";
 import { useLocale } from "next-intl";
+import { useSearchParams } from "next/navigation";
 import { HiMiniSlash } from "react-icons/hi2";
 
 interface Props {
@@ -9,6 +10,7 @@ interface Props {
 
 export default function LocaleSwitcher({ onClose }: Props) {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
   const router = useRouter();
   const locale = useLocale();
 
@@ -18,7 +20,9 @@ export default function LocaleSwitcher({ onClose }: Props) {
     onClose();
 
     setTimeout(() => {
-      router.push(pathname, { locale: newLocale });
+      const query = searchParams.toString();
+      const url = query ? `${pathname}?${query}` : pathname;
+      router.push(url, { locale: newLocale });
     }, 1000);
   };
 
