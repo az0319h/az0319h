@@ -246,6 +246,17 @@ export default function CreateProjectForm() {
               placeholder="E.G., NEXTJS, REACT, FIREBASE (SEPARATE WITH COMMAS)"
             />
           </label>
+          <label className="block">
+            <span>PROJECT STATUS</span>
+            <select
+              name="isCompleted"
+              defaultValue="false"
+              className="w-full border border-line-100 rounded px-3 py-2"
+            >
+              <option value="false">IN PROGRESS</option>
+              <option value="true">COMPLETED</option>
+            </select>
+          </label>
         </fieldset>
 
         {/* Lighthouse 점수 */}

@@ -18,6 +18,7 @@ export async function createProject(
   try {
     const id = crypto.randomUUID();
     const createdAt = new Date().toISOString();
+    const isCompleted = formData.get("isCompleted") === "true";
 
     // 다국어 필드
     const title = {
@@ -106,6 +107,7 @@ export async function createProject(
     const payload: ProjectPayload = {
       id,
       createdAt,
+      isCompleted,
       title, // { en, ko }
       tagline, // { en, ko }
       platform, // { en, ko }

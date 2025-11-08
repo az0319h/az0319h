@@ -125,7 +125,11 @@
         "title": "What efforts have you made for self-development?",
         "description": "I have consistently devoted myself to <strong className=\"text-primary-blue-200\">self-development</strong> in order to grow as a <strong className=\"text-primary-blue-200\">frontend developer</strong>. I systematically acquired knowledge and skills through <strong className=\"text-primary-blue-200\">online courses</strong> and <strong className=\"text-primary-blue-200\">bootcamps</strong>, and strengthened my practical understanding by repeatedly practicing <strong className=\"text-primary-blue-200\">CRUD</strong> implementations and working with various <strong className=\"text-primary-blue-200\">libraries</strong> and <strong className=\"text-primary-blue-200\">frameworks</strong>. Whenever I encountered challenges or had questions during the <strong className=\"text-primary-blue-200\">learning process</strong>, I immediately organized them and sought <strong className=\"text-primary-blue-200\">advice</strong> from experienced developers to deepen my understanding. These habits have allowed me to quickly learn and apply <strong className=\"text-primary-blue-200\">new technologies</strong>, and have helped me grow into a developer who can confidently take on professional <strong className=\"text-primary-blue-200\">responsibilities</strong>."
       }
-    ]
+    ],
+    "status": {
+      "inProgress": "I N\u00A0\u00A0P R O G R E S S",
+      "completed": "C O M P L E T E D"
+    }
   },
   "ContactPage": {
     "title": "Hello. Let’s talk.",

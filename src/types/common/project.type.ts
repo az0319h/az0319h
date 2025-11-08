@@ -11,6 +11,7 @@ export interface Participant {
 export interface ProjectPayload {
   id: string;
   createdAt: string;
+  isCompleted: boolean;
   title: { en: string; ko: string };
   tagline: { en: string; ko: string };
   platform: { en: string; ko: string };

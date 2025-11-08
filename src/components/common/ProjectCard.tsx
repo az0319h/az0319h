@@ -57,8 +57,22 @@ export default function ProjectCard({
                 <FaArrowRightLong />
               </div>
             </div>
-            <div className="absolute left-5 top-5 md:top-7 md:left-7 text-12-medium ">
-              {t("updatedText")}
+            <div className=" absolute left-5 top-5 md:top-7 md:left-7 text-12-medium ">
+              {data.isCompleted ? (
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-white animate-white-glow"></div>
+                  <span className="text-white animate-white-text-glow">
+                    {t("status.completed")}
+                  </span>
+                </div>
+              ) : (
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-[#22c55e] animate-green-glow"></div>
+                  <span className="text-[#22c55e] animate-green-text-glow">
+                    {t("status.inProgress")}
+                  </span>
+                </div>
+              )}
             </div>
           </div>
         </div>
