@@ -23,32 +23,21 @@ export default function SortSelector({
 
   return (
     <div className="flex justify-end mb-6 sm:mb-10">
-      <div className="relative inline-block">
+      <div className="w-fit relative inline">
         <select
           value={currentSort}
           onChange={(e) => {
             handleChange(e);
             e.target.blur();
           }}
-          className="
-        appearance-none
-        px-4 py-2.5 pr-10
-        text-14-medium
-        rounded-lg
-        bg-white 
-        border border-gray-200 
-        dark:text-gray-100
-        shadow-sm
-        hover:border-gray-400 
-        transition-all duration-200
-        cursor-pointer
-      "
+          className=" appearance-none px-4 py-2.5 pr-10 text-14-medium rounded-lg bg-white border border-gray-200 dark:text-gray-100 shadow-sm hover:border-gray-400 transition-all duration-200 cursor-pointer"
         >
           <option value="latest">{t("latest")}</option>
           <option value="oldest">{t("oldest")}</option>
+          <option value="completed">{t("completed")}</option>
+          <option value="inProgress">{t("inProgress")}</option>
         </select>
 
-        {/* ▼ 커스텀 화살표 아이콘 */}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"

@@ -129,7 +129,8 @@
     "status": {
       "inProgress": "진 행\u00A0\u00A0중",
       "completed": "프 로 젝 트\u00A0\u00A0완 료"
-    }
+    },
+    "IsProject": "프 로 젝 트 가\u00A0\u00A0\u00A0없 습 니 다 . . ."
   },
   "ContactPage": {
     "title": "안녕하세요.\u00A0\u00A0문의해 주세요.",
@@ -166,6 +167,8 @@
   },
   "Sort": {
     "latest": "최 신 순",
-    "oldest": "오 래 된 순"
+    "oldest": "오 래 된 순",
+    "completed": "완 성 된\u00A0\u00A0프 로 젝 트",
+    "inProgress": "진 행 중 인\u00A0\u00A0프 로 젝 트"
   }
 }
