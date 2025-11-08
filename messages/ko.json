@@ -125,7 +125,11 @@
         "title": "자기 개발을 위해 어떤 노력을 해왔나요?",
         "description": "저는 <strong class=\"text-primary-blue-200\">온라인 강의</strong>와 <strong class=\"text-primary-blue-200\">부트캠프</strong>를 통해 지식을 습득하고, <strong class=\"text-primary-blue-200\">CRUD</strong> 구현과 다양한 <strong class=\"text-primary-blue-200\">라이브러리</strong>·<strong class=\"text-primary-blue-200\">프레임워크</strong>를 반복 학습하며 실무 감각을 키웠습니다. 또한 의문이 생기면 바로 정리하고 <strong class=\"text-primary-blue-200\">현업 개발자</strong>에게 피드백을 받아 이해를 심화했습니다. 이 과정을 통해 <strong class=\"text-primary-blue-200\">새로운 기술</strong>을 빠르게 습득·적용할 수 있는 역량을 쌓았고, 자신 있게 <strong class=\"text-primary-blue-200\">업무</strong>에 임할 수 있는 개발자로 성장하고 있습니다."
       }
-    ]
+    ],
+    "status": {
+      "inProgress": "진 행\u00A0\u00A0중",
+      "completed": "프 로 젝 트\u00A0\u00A0완 료"
+    }
   },
   "ContactPage": {
     "title": "안녕하세요.\u00A0\u00A0문의해 주세요.",

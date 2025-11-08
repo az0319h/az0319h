@@ -334,6 +334,70 @@
   font-weight: 400;
 }
 
+@keyframes green-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 4px #22c55e, 0 0 8px #22c55e;
+  }
+  50% {
+    box-shadow: 0 0 10px #4ade80, 0 0 20px #4ade80;
+  }
+}
+
+@keyframes green-text-glow {
+  0%,
+  100% {
+    text-shadow: 0 0 4px #22c55e;
+  }
+  50% {
+    text-shadow: 0 0 8px #4ade80;
+  }
+}
+
+@keyframes white-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 4px #ffffff, 0 0 8px #f5f5f5;
+  }
+  50% {
+    box-shadow: 0 0 10px #e5e5e5, 0 0 20px #ffffff;
+  }
+}
+
+@keyframes white-text-glow {
+  0%,
+  100% {
+    text-shadow: 0 0 4px #ffffff;
+  }
+  50% {
+    text-shadow: 0 0 8px #e5e5e5;
+  }
+}
+
+.animate-white-glow {
+  animation: white-glow 1.4s ease-in-out infinite;
+}
+
+.animate-white-text-glow {
+  animation: white-text-glow 1.4s ease-in-out infinite;
+}
+
+.animate-green-glow {
+  animation: green-glow 1.4s ease-in-out infinite;
+}
+
+.animate-green-text-glow {
+  animation: green-text-glow 1.4s ease-in-out infinite;
+}
+
+.animate-pulse-green {
+  animation: pulse-green 1.5s ease-in-out infinite;
+}
+
+.animate-pulse-white {
+  animation: pulse-white 1.5s ease-in-out infinite;
+}
+
 html,
 body {
   background-color: var(--color-bg-100);
