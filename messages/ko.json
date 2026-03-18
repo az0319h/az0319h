@@ -52,7 +52,7 @@
     "about": "소 개",
     "contact": "문 의 하 기",
     "projects": "프 로 젝 트",
-    "cocreators": "혁 력 자 들"
+    "cocreators": "협 력 자 들"
   },
   "ProjectsPage": {
     "tabs": {
@@ -94,6 +94,12 @@
         "company": "32보병사단, 세종, 대한민국",
         "companyUrl": "https://www.mma.go.kr/contents.do?mc=mma0000516",
         "period": "2022년 2월 – 2023년 8월"
+      },
+      {
+        "title": "베이스 특허법률사무소",
+        "company": "송파, 대한민국",
+        "companyUrl": "https://www.bassip.com",
+        "period": "2025년 12월 – 2026년 3월"
       }
     ],
     "coreBeliefTitle": "나 의\u00A0\u00A0핵 심\u00A0\u00A0가 치 관",
