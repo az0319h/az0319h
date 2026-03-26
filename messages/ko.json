@@ -79,7 +79,7 @@
       },
       "collaborators": "프 로 젝 트\u00A0\u00A0\u00A0협 업 자"
     },
-    "bio": "저는 사용자가 직관적으로 이해하고 편리하게 이용할 수 있는 웹 서비스를 만드는 데 집중하는 프론트엔드 개발자입니다. React.js, Next.js, Node.js의 경험을 바탕으로, UI/UX 중심적인 접근을 통해 문제를 해결하고 완성도 높은 서비스를 만들어 왔습니다. 제 목표는 단순히 기능을 구현하는 데 그치지 않고, 사용자 경험의 가치를 극대화하는 개발자로 꾸준히 성장하는 것입니다.",
+    "bio": "저는 사용자가 직관적으로 이해하고 편리하게 이용할 수 있는 웹 서비스를 만드는 데 집중하는 풀스택 개발자입니다. React.js, Next.js로 사용자 경험을 설계·구현하고, Node.js를 비롯한 서버·데이터 레이어까지 연결해 문제를 해결하며 완성도 높은 서비스를 만들어 왔습니다. 제 목표는 단순히 기능을 구현하는 데 그치지 않고, 사용자 경험의 가치를 극대화하는 개발자로 꾸준히 성장하는 것입니다.",
     "techStackTitle": "제가 경험한 기술들입니다.",
     "experienceTitle": "나 의\u00A0\u00A0경 험",
     "experienceList": [
@@ -120,16 +120,16 @@
     "interviewTitle": "나 의\u00A0\u00A0이 야 기",
     "interviewsList": [
       {
-        "title": "프론트엔드 개발자 직무에 지원한 이유는 무엇인가요?",
-        "description": "저는 <strong class=\"text-primary-blue-200\">C</strong>와 <strong class=\"text-primary-blue-200\">Java</strong>로 프로그래밍을 시작했지만, 결과물이 즉각적으로 눈에 보이지 않는 한계로 인해 흥미를 잃었습니다. 반면 <strong class=\"text-primary-blue-200\">웹 개발</strong>은 코드를 작성하자마자 화면에 결과가 반영되는 점이 매력적으로 다가왔고, 이를 통해 <strong class=\"text-primary-blue-200\">클론 코딩</strong>과 다양한 학습 자료를 활용하여 웹 전반에 대한 이해를 넓혀갔습니다. 이후 <strong class=\"text-primary-blue-200\">백엔드 데이터</strong>를 프론트엔드에 어떻게 연동할 수 있을지 고민하다가 <strong class=\"text-primary-blue-200\">풀스택 부트캠프</strong>에 참여하였고, 여러 <strong class=\"text-primary-blue-200\">팀 프로젝트</strong>를 통해 프론트엔드와 백엔드의 구조와 상호작용을 체계적으로 익힐 수 있었습니다. 그 과정에서 모든 영역을 다루는 <strong class=\"text-primary-blue-200\">풀스택 개발자</strong>의 경험도 쌓았지만, 무엇보다 제가 가장 잘하고 즐길 수 있는 분야가 <strong class=\"text-primary-blue-200\">프론트엔드</strong>라는 확신을 갖게 되었고, 이에 <strong class=\"text-primary-blue-200\">프론트엔드 개발자</strong>로 지원하게 되었습니다."
+        "title": "풀스택 개발을 지향하게 된 계기는 무엇인가요?",
+        "description": "저는 <strong class=\"text-primary-blue-200\">C</strong>와 <strong class=\"text-primary-blue-200\">Java</strong>로 프로그래밍을 시작했지만, 실행 결과가 곧바로 체감되지 않는 환경에서는 동력을 잃기 쉽다고 느꼈습니다. 반면 <strong class=\"text-primary-blue-200\">웹</strong>은 코드가 곧 화면과 경험으로 이어진다는 점에서 매력적이었고, <strong class=\"text-primary-blue-200\">클론 코딩</strong>과 학습을 통해 클라이언트부터 <strong class=\"text-primary-blue-200\">서버 연동</strong>까지 시야를 넓혔습니다. 데이터를 어떻게 안전하게 설계하고 <strong class=\"text-primary-blue-200\">API</strong>로 노출하며, 그 위에서 <strong class=\"text-primary-blue-200\">UI</strong>를 설계할지 고민하던 중 <strong class=\"text-primary-blue-200\">풀스택 부트캠프</strong>에 참여했고, 여러 <strong class=\"text-primary-blue-200\">팀 프로젝트</strong>에서 <strong class=\"text-primary-blue-200\">데이터베이스</strong>·백엔드·프론트가 한 흐름으로 맞물릴 때 비로소 ‘서비스 전체’를 책임진다는 감각을 얻었습니다. 한 레이어에 머무르기보다 <strong class=\"text-primary-blue-200\">모델링</strong>부터 <strong class=\"text-primary-blue-200\">사용자 경험</strong>까지 끊김 없이 잇는 일에 보람을 느끼며, 그래서 <strong class=\"text-primary-blue-200\">풀스택 개발자</strong>로서의 방향을 선택했습니다."
       },
       {
-        "title": "프론트엔드 개발자로서 가장 큰 강점은 무엇인가요?",
-        "description": "저의 가장 큰 장점은 <strong class=\"text-primary-blue-200\">UI/UX</strong>를 명확하게 이해하고 구현할 수 있는 능력입니다. 저는 코드를 효율적이고 구조적으로 작성하는 것도 중요하지만, 궁극적으로 사용자가 마주하는 <strong class=\"text-primary-blue-200\">화면</strong>과 그 안에서 이루어지는 <strong class=\"text-primary-blue-200\">경험</strong>이 가장 핵심이라고 생각합니다. 이러한 관점을 바탕으로 항상 <strong class=\"text-primary-blue-200\">사용자 중심</strong>의 화면과 <strong class=\"text-primary-blue-200\">인터랙션</strong>을 고민하며 개발해왔습니다. 특히 여러 <strong class=\"text-primary-blue-200\">팀 프로젝트</strong>에서 <strong class=\"text-primary-blue-200\">프론트엔드 리더</strong> 역할을 맡아 UI/UX 전반을 주도하였고, <strong class=\"text-primary-blue-200\">피어 리뷰</strong> 과정에서도 UI와 UX에 대한 긍정적인 평가를 가장 많이 받았습니다. 이처럼 <strong class=\"text-primary-blue-200\">사용자 경험</strong>을 고려하는 역량이 저의 가장 큰 강점이라고 자신 있게 말씀드릴 수 있습니다."
+        "title": "풀스택 개발자로서 가장 큰 강점은 무엇인가요?",
+        "description": "저의 강점은 화면 뒤의 <strong class=\"text-primary-blue-200\">구조</strong>와 사용자 앞의 <strong class=\"text-primary-blue-200\">경험</strong>을 동시에 그릴 수 있다는 점입니다. <strong class=\"text-primary-blue-200\">API</strong>와 데이터 흐름을 이해한 상태에서 <strong class=\"text-primary-blue-200\">UI/UX</strong>를 구현하면, 불필요한 요청이나 어긋난 상태를 줄이고 일관된 서비스를 만들 수 있습니다. <strong class=\"text-primary-blue-200\">팀 프로젝트</strong>에서는 프론트와 백엔드 사이에서 <strong class=\"text-primary-blue-200\">협업</strong>을 조율했고, <strong class=\"text-primary-blue-200\">코드 리뷰</strong>에서도 사용자에게 닿는 부분과 시스템이 지탱하는 부분을 함께 점검하는 편입니다. 스택을 나열하는 것보다, 요구사항을 끝까지 완주하는 데 필요한 레이어를 스스로 메울 수 있다는 점이 제가 가장 <strong class=\"text-primary-blue-200\">자신 있게</strong> 말씀드릴 수 있는 강점입니다."
       },
       {
         "title": "자기 개발을 위해 어떤 노력을 해왔나요?",
-        "description": "저는 <strong class=\"text-primary-blue-200\">온라인 강의</strong>와 <strong class=\"text-primary-blue-200\">부트캠프</strong>를 통해 지식을 습득하고, <strong class=\"text-primary-blue-200\">CRUD</strong> 구현과 다양한 <strong class=\"text-primary-blue-200\">라이브러리</strong>·<strong class=\"text-primary-blue-200\">프레임워크</strong>를 반복 학습하며 실무 감각을 키웠습니다. 또한 의문이 생기면 바로 정리하고 <strong class=\"text-primary-blue-200\">현업 개발자</strong>에게 피드백을 받아 이해를 심화했습니다. 이 과정을 통해 <strong class=\"text-primary-blue-200\">새로운 기술</strong>을 빠르게 습득·적용할 수 있는 역량을 쌓았고, 자신 있게 <strong class=\"text-primary-blue-200\">업무</strong>에 임할 수 있는 개발자로 성장하고 있습니다."
+        "description": "<strong class=\"text-primary-blue-200\">온라인 강의</strong>와 <strong class=\"text-primary-blue-200\">부트캠프</strong>로 기초를 다진 뒤, <strong class=\"text-primary-blue-200\">CRUD</strong>와 <strong class=\"text-primary-blue-200\">REST API</strong>, <strong class=\"text-primary-blue-200\">ORM</strong> 등 서버·데이터 영역을 반복 구현하며 손에 익혔고, 프론트엔드에서는 컴포넌트 구조와 <strong class=\"text-primary-blue-200\">상태 관리</strong>를 함께 다듬었습니다. 새로운 <strong class=\"text-primary-blue-200\">프레임워크</strong>나 패턴이 나오면 공식 문서와 샘플로 먼저 검증하고, 막히는 지점은 <strong class=\"text-primary-blue-200\">현업 개발자</strong>의 피드백으로 정리합니다. 풀스택은 범위가 넓기 때문에 ‘한 번에 전부’가 아니라, 레이어별로 깊이를 쌓되 <strong class=\"text-primary-blue-200\">전체 아키텍처</strong>의 그림을 잃지 않는 학습 습관을 유지하고 있습니다."
       }
     ],
     "status": {

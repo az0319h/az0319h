@@ -1,4 +1,5 @@
 export const boldWords = [
+  "full-stack developer",
   "developer",
   "web services",
   "React.js",
@@ -9,9 +10,8 @@ export const boldWords = [
   "features",
   "user experience",
   "value",
-  "프론트엔드 개발자",
+  "풀스택 개발자",
   "웹 서비스",
-  "UI/UX 중심적인 접근",
   "완성도 높은 서비스",
   "기능",
   "사용자 경험의 가치",

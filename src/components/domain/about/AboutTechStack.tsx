@@ -8,6 +8,7 @@ import {
   SiExpress,
   SiPrisma,
   SiFirebase,
+  SiSupabase,
   SiVercel,
   SiJavascript,
 } from "react-icons/si";
@@ -37,6 +38,7 @@ export default function AboutTechStack() {
     { icon: <SiExpress size={26} color="#000000" />, name: "Express" },
     { icon: <SiPrisma size={26} color="#2D3748" />, name: "Prisma" },
     { icon: <SiFirebase size={26} color="#FFCA28" />, name: "Firebase" },
+    { icon: <SiSupabase size={26} color="#3ECF8E" />, name: "Supabase" },
     { icon: <SiVercel size={26} />, name: "Vercel" },
     {
       icon: <Image src={photoshopIcon} alt="Photoshop" width={26} />,
